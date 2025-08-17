@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Error - PersonalitySpark</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-6);
+        }
+        .error-content {
+            max-width: 600px;
+        }
+        .error-code {
+            font-size: 6rem;
+            font-weight: 700;
+            color: var(--error);
+            line-height: 1;
+            margin-bottom: var(--spacing-4);
+        }
+        .error-message {
+            font-size: var(--font-size-xl);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-6);
+        }
+        .error-description {
+            font-size: var(--font-size-base);
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-8);
+            line-height: 1.6;
+        }
+        .error-actions {
+            display: flex;
+            gap: var(--spacing-4);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .retry-info {
+            background: var(--bg-secondary);
+            padding: var(--spacing-4);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-6);
+            border: 1px solid var(--gray-200);
+        }
+        @media (max-width: 640px) {
+            .error-code {
+                font-size: 4rem;
+            }
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-content">
+            <div class="error-code">5xx</div>
+            <h1 class="error-message">Something went wrong</h1>
+            <p class="error-description">
+                We're experiencing some technical difficulties on our end. Our team has been notified and is working to fix the issue.
+                Please try again in a few moments.
+            </p>
+            
+            <div class="retry-info">
+                <p><strong>💡 Quick fixes to try:</strong></p>
+                <ul style="text-align: left; display: inline-block;">
+                    <li>Refresh the page</li>
+                    <li>Clear your browser cache</li>
+                    <li>Try again in a few minutes</li>
+                </ul>
+            </div>
+            
+            <div class="error-actions">
+                <button onclick="window.location.reload()" class="btn btn-primary">
+                    🔄 Refresh Page
+                </button>
+                <a href="/" class="btn btn-secondary">
+                    🏠 Go Home
+                </a>
+                <button onclick="history.back()" class="btn btn-outline">
+                    ← Go Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Apply saved theme
+        const savedTheme = localStorage.getItem('personality-spark-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        // Auto-refresh after 30 seconds
+        let countdown = 30;
+        const refreshBtn = document.querySelector('.btn-primary');
+        const originalText = refreshBtn.textContent;
+        
+        const updateCountdown = () => {
+            refreshBtn.textContent = `🔄 Auto-refresh in ${countdown}s`;
+            countdown--;
+            
+            if (countdown < 0) {
+                window.location.reload();
+            }
+        };
+        
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        
+        // Clear countdown if user manually refreshes
+        refreshBtn.addEventListener('click', () => {
+            clearInterval(countdownInterval);
+        });
+    </script>
+</body>
+</html>
