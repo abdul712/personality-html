@@ -1,22 +1,87 @@
-<!DOCTYPE html>
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+
+// Category configurations
+const categories = {
+  'introversion': {
+    title: 'Introversion & Personality Articles - PersonalitySpark Blog',
+    description: 'Comprehensive articles on introversion, personality types, communication styles, workplace success, and social strategies. Expert insights for introverts and personality development.',
+    keywords: 'introversion articles, introvert personality, personality types, introvert communication, workplace success, social strategies, MBTI, personality development',
+    icon: '🤫',
+    heading: 'Introversion & Personality Types',
+    subtitle: 'Deep insights into introversion, personality traits, communication styles, and workplace success. Discover how to thrive as an introvert in various life situations.',
+    searchPlaceholder: 'Search introversion articles...',
+    sectionTitle: 'Introversion Articles',
+    categoryKey: 'introversion'
+  },
+  'angel-numbers': {
+    title: 'Angel Numbers & Spirituality Articles - PersonalitySpark Blog',
+    description: 'Comprehensive articles on angel numbers, spiritual meanings, divine guidance, and numerology. Decode the messages from the universe through sacred number sequences.',
+    keywords: 'angel numbers articles, spiritual numbers, numerology, divine guidance, angel number meanings, spiritual awakening, sacred numbers',
+    icon: '🔢',
+    heading: 'Angel Numbers & Spirituality',
+    subtitle: 'Decode the meanings behind angel numbers and their spiritual significance in your life. Discover divine guidance through sacred number sequences.',
+    searchPlaceholder: 'Search angel number articles...',
+    sectionTitle: 'Angel Number Articles',
+    categoryKey: 'angel-numbers'
+  },
+  'relationships': {
+    title: 'Relationships & Love Articles - PersonalitySpark Blog',
+    description: 'Comprehensive articles on relationships, dating advice, love compatibility, and communication. Expert insights on building meaningful connections and lasting love.',
+    keywords: 'relationships articles, dating advice, love compatibility, relationship communication, dating tips, love advice, relationship guidance',
+    icon: '💕',
+    heading: 'Relationships & Love',
+    subtitle: 'Navigate the complexities of relationships, dating, and finding meaningful connections. Expert guidance on love, communication, and building lasting bonds.',
+    searchPlaceholder: 'Search relationship articles...',
+    sectionTitle: 'Relationship Articles',
+    categoryKey: 'relationships'
+  },
+  'psychology': {
+    title: 'Psychology & Mental Health Articles - PersonalitySpark Blog',
+    description: 'Comprehensive articles on psychology, mental health, personality types, and behavioral science. Expert insights on understanding the human mind and emotional wellbeing.',
+    keywords: 'psychology articles, mental health, personality types, behavioral science, emotional intelligence, psychology concepts, mental wellbeing',
+    icon: '🧠',
+    heading: 'Psychology & Mental Health',
+    subtitle: 'Understand the human mind, emotions, and strategies for maintaining mental wellness. Explore psychology concepts and behavioral insights.',
+    searchPlaceholder: 'Search psychology articles...',
+    sectionTitle: 'Psychology Articles',
+    categoryKey: 'psychology'
+  },
+  'self-discovery': {
+    title: 'Self-Discovery & Growth Articles - PersonalitySpark Blog',
+    description: 'Comprehensive articles on self-discovery, personal growth, mindfulness, and transformation. Expert insights on finding your true self and achieving personal development.',
+    keywords: 'self-discovery articles, personal growth, mindfulness, transformation, self-awareness, personal development, spiritual growth',
+    icon: '🌱',
+    heading: 'Self-Discovery & Growth',
+    subtitle: 'Embark on a journey of personal growth, self-awareness, and discovering your true potential. Transform your life through mindful self-discovery.',
+    searchPlaceholder: 'Search self-discovery articles...',
+    sectionTitle: 'Self-Discovery Articles',
+    categoryKey: 'self-discovery'
+  }
+};
+
+function createCategoryPageContent(categoryKey, config) {
+  return `<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introversion & Personality Articles - PersonalitySpark Blog</title>
-    <meta name="description" content="Comprehensive articles on introversion, personality types, communication styles, workplace success, and social strategies. Expert insights for introverts and personality development.">
-    <meta name="keywords" content="introversion articles, introvert personality, personality types, introvert communication, workplace success, social strategies, MBTI, personality development">
+    <title>${config.title}</title>
+    <meta name="description" content="${config.description}">
+    <meta name="keywords" content="${config.keywords}">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Introversion & Personality Articles - PersonalitySpark Blog">
-    <meta property="og:description" content="Comprehensive articles on introversion, personality types, communication styles, workplace success, and social strategies. Expert insights for introverts and personality development.">
+    <meta property="og:title" content="${config.title}">
+    <meta property="og:description" content="${config.description}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://personalityspark.com/blog/categories/introversion.html">
+    <meta property="og:url" content="https://personalityspark.com/blog/categories/${categoryKey}.html">
     <meta property="og:image" content="https://personalityspark.com/assets/icons/icon-512.png">
     
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
-    <link rel="canonical" href="https://personalityspark.com/blog/categories/introversion.html">
+    <link rel="canonical" href="https://personalityspark.com/blog/categories/${categoryKey}.html">
 </head>
 <body>
     <!-- Navigation -->
@@ -47,25 +112,25 @@
     <section class="category-specific-header">
         <div class="container">
             <div class="category-breadcrumb">
-                <a href="../">Blog</a> / Introversion & Personality Types
+                <a href="../">Blog</a> / ${config.heading}
             </div>
-            <div class="category-icon">🤫</div>
-            <h1>Introversion & Personality Types</h1>
-            <p>Deep insights into introversion, personality traits, communication styles, and workplace success. Discover how to thrive as an introvert in various life situations.</p>
+            <div class="category-icon">${config.icon}</div>
+            <h1>${config.heading}</h1>
+            <p>${config.subtitle}</p>
         </div>
     </section>
 
     <!-- Search Section -->
     <section class="container search-section">
-        <h2 style="margin-bottom: var(--spacing-4); color: var(--text-primary);">Introversion Articles Search</h2>
+        <h2 style="margin-bottom: var(--spacing-4); color: var(--text-primary);">${config.sectionTitle} Search</h2>
         <div class="search-box">
-            <input type="text" class="search-input" placeholder="Search introversion articles..." id="blogSearch">
+            <input type="text" class="search-input" placeholder="${config.searchPlaceholder}" id="blogSearch">
         </div>
     </section>
 
     <!-- Articles Section -->
     <section class="container featured-posts">
-        <h2>Introversion Articles</h2>
+        <h2>${config.sectionTitle}</h2>
         <div class="posts-grid" id="postsGrid">
             <!-- Articles will be loaded dynamically -->
         </div>
@@ -77,8 +142,8 @@
             const articleRegistry = new ArticleRegistry();
             const postsGrid = document.getElementById('postsGrid');
 
-            const articles = articleRegistry.getArticlesByCategory('introversion');
-            console.log('Found articles for introversion:', articles.length);
+            const articles = articleRegistry.getArticlesByCategory('${config.categoryKey}');
+            console.log('Found articles for ${config.categoryKey}:', articles.length);
 
             if (articles.length === 0) {
                 postsGrid.innerHTML = '<p style="text-align: center; color: var(--text-secondary); font-size: var(--font-size-lg); margin: var(--spacing-8) 0;">No articles found in this category yet. Check back soon for new content!</p>';
@@ -185,4 +250,19 @@
         }
     </script>
 </body>
-</html>
+</html>`;
+}
+
+// Generate and write all category pages
+const blogCategoriesDir = path.join(__dirname, '..', 'blog', 'categories');
+
+Object.keys(categories).forEach(categoryKey => {
+  const config = categories[categoryKey];
+  const content = createCategoryPageContent(categoryKey, config);
+  const filePath = path.join(blogCategoriesDir, `${categoryKey}.html`);
+  
+  fs.writeFileSync(filePath, content, 'utf8');
+  console.log(`✅ Generated ${categoryKey}.html`);
+});
+
+console.log('🎉 All category pages have been generated successfully!');

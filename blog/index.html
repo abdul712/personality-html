@@ -382,7 +382,11 @@
             const articleRegistry = new ArticleRegistry();
             const postsGrid = document.getElementById('postsGrid');
 
-            const articles = articleRegistry.articles;
+            // Get featured articles or first 12 articles if no featured ones
+            let articles = articleRegistry.getFeaturedArticles();
+            if (articles.length === 0) {
+                articles = articleRegistry.articles.slice(0, 12);
+            }
 
             articles.forEach(article => {
                 const articleCard = articleRegistry.generateArticleCard(article);
@@ -441,8 +445,19 @@
         // Blog search functionality
         document.getElementById('blogSearch').addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
-            // Implement search functionality here
-            console.log('Searching for:', searchTerm);
+            const articleCards = document.querySelectorAll('.article-card');
+            
+            articleCards.forEach(card => {
+                const title = card.querySelector('.article-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.article-excerpt').textContent.toLowerCase();
+                const tags = card.getAttribute('data-tags').toLowerCase();
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm) || tags.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         });
 
         // Category card click effects

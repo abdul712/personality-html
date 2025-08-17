@@ -3,261 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PersonalitySpark Blog - Insights on Personality, Twin Flames & Self-Discovery</title>
-    <meta name="description" content="Explore deep insights on personality types, twin flame connections, spiritual growth, and self-discovery. Expert articles on introversion, relationships, and personal development.">
-    <meta name="keywords" content="personality blog, twin flame, introversion, spiritual growth, self-discovery, relationships, personal development">
+    <title>Psychology & Mental Health Articles - PersonalitySpark Blog</title>
+    <meta name="description" content="Comprehensive articles on psychology, mental health, personality types, and behavioral science. Expert insights on understanding the human mind and emotional wellbeing.">
+    <meta name="keywords" content="psychology articles, mental health, personality types, behavioral science, emotional intelligence, psychology concepts, mental wellbeing">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="PersonalitySpark Blog - Personality & Spiritual Insights">
-    <meta property="og:description" content="Discover expert insights on personality types, twin flames, and spiritual growth">
+    <meta property="og:title" content="Psychology & Mental Health Articles - PersonalitySpark Blog">
+    <meta property="og:description" content="Comprehensive articles on psychology, mental health, personality types, and behavioral science. Expert insights on understanding the human mind and emotional wellbeing.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://personalityspark.com/blog/">
+    <meta property="og:url" content="https://personalityspark.com/blog/categories/psychology.html">
     <meta property="og:image" content="https://personalityspark.com/assets/icons/icon-512.png">
     
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
     <link rel="canonical" href="https://personalityspark.com/blog/categories/psychology.html">
-    
-    <style>
-        .blog-hero {
-            background: linear-gradient(135deg, var(--primary-50) 0%, var(--secondary-50) 100%);
-            padding: var(--spacing-16) var(--spacing-6);
-            text-align: center;
-            margin-bottom: var(--spacing-12);
-        }
-        
-        .blog-hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary-600);
-            margin-bottom: var(--spacing-4);
-        }
-        
-        .blog-hero p {
-            font-size: var(--font-size-lg);
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-6);
-            margin-bottom: var(--spacing-12);
-        }
-        
-        .category-card {
-            background: var(--bg-secondary);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-6);
-            border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .category-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary-300);
-        }
-        
-        .category-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--spacing-4);
-        }
-        
-        .category-title {
-            font-size: var(--font-size-xl);
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--spacing-2);
-        }
-        
-        .category-description {
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-4);
-        }
-        
-        .category-count {
-            font-size: var(--font-size-sm);
-            color: var(--primary-600);
-            font-weight: 500;
-        }
-        
-        .featured-posts {
-            background: var(--bg-secondary);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-8);
-            margin-bottom: var(--spacing-12);
-        }
-        
-        .featured-posts h2 {
-            font-size: var(--font-size-2xl);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: var(--spacing-6);
-            text-align: center;
-        }
-        
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--spacing-6);
-        }
-        
-        .post-card {
-            background: var(--bg-primary);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-5);
-            border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
-        }
-        
-        .post-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .post-meta {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-2);
-            margin-bottom: var(--spacing-3);
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
-        }
-        
-        .post-category-tag {
-            background: var(--primary-100);
-            color: var(--primary-700);
-            padding: var(--spacing-1) var(--spacing-2);
-            border-radius: var(--radius-sm);
-            font-size: var(--font-size-xs);
-            font-weight: 500;
-        }
-        
-        .post-title {
-            font-size: var(--font-size-lg);
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--spacing-3);
-            line-height: 1.4;
-        }
-        
-        .post-excerpt {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: var(--spacing-4);
-        }
-        
-        .read-more {
-            color: var(--primary-600);
-            font-weight: 500;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: var(--spacing-1);
-        }
-        
-        .read-more:hover {
-            color: var(--primary-700);
-        }
-        
-        .search-section {
-            text-align: center;
-            margin-bottom: var(--spacing-12);
-        }
-        
-        .search-box {
-            max-width: 500px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .search-input {
-            width: 100%;
-            padding: var(--spacing-3) var(--spacing-4);
-            border: 2px solid var(--gray-300);
-            border-radius: var(--radius-md);
-            font-size: var(--font-size-base);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-        }
-        
-        .search-input:focus {
-            outline: none;
-            border-color: var(--primary-500);
-        }
-        
-        .stats-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--spacing-4);
-            margin-bottom: var(--spacing-8);
-        }
-        
-        .stat-card {
-            background: var(--bg-secondary);
-            padding: var(--spacing-4);
-            border-radius: var(--radius-md);
-            text-align: center;
-            border: 1px solid var(--gray-200);
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-600);
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
-            margin-top: var(--spacing-1);
-        }
-        
-        @media (max-width: 768px) {
-            .blog-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .posts-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Dark theme overrides */
-        [data-theme="dark"] .category-card {
-            background: var(--bg-accent);
-            border-color: var(--gray-600);
-        }
-        
-        [data-theme="dark"] .featured-posts {
-            background: var(--bg-accent);
-        }
-        
-        [data-theme="dark"] .post-card {
-            background: var(--bg-secondary);
-            border-color: var(--gray-600);
-        }
-        
-        [data-theme="dark"] .search-input {
-            background: var(--bg-secondary);
-            border-color: var(--gray-600);
-            color: var(--text-primary);
-        }
-        
-        [data-theme="dark"] .stat-card {
-            background: var(--bg-accent);
-            border-color: var(--gray-600);
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -284,95 +43,31 @@
         </div>
     </nav>
 
-    <!-- Blog Hero Section -->
-    <section class="blog-hero">
+    <!-- Category-Specific Hero Section -->
+    <section class="category-specific-header">
         <div class="container">
-            <h1>PersonalitySpark Blog</h1>
-            <p>Discover deep insights on personality types, twin flame connections, spiritual growth, and the fascinating world of human psychology. Your journey to self-discovery starts here.</p>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="container stats-section">
-        <div class="stat-card">
-            <span class="stat-number">2,500+</span>
-            <span class="stat-label">Expert Articles</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-number">6</span>
-            <span class="stat-label">Categories</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-number">100K+</span>
-            <span class="stat-label">Monthly Readers</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-number">Daily</span>
-            <span class="stat-label">New Content</span>
+            <div class="category-breadcrumb">
+                <a href="../">Blog</a> / Psychology & Mental Health
+            </div>
+            <div class="category-icon">🧠</div>
+            <h1>Psychology & Mental Health</h1>
+            <p>Understand the human mind, emotions, and strategies for maintaining mental wellness. Explore psychology concepts and behavioral insights.</p>
         </div>
     </section>
 
     <!-- Search Section -->
     <section class="container search-section">
-        <h2 style="margin-bottom: var(--spacing-4); color: var(--text-primary);">Find Your Perfect Article</h2>
+        <h2 style="margin-bottom: var(--spacing-4); color: var(--text-primary);">Psychology Articles Search</h2>
         <div class="search-box">
-            <input type="text" class="search-input" placeholder="Search for personality insights, twin flames, relationships..." id="blogSearch">
+            <input type="text" class="search-input" placeholder="Search psychology articles..." id="blogSearch">
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="container">
-        <h2 style="text-align: center; margin-bottom: var(--spacing-8); color: var(--text-primary); font-size: var(--font-size-2xl);">Explore Our Categories</h2>
-        <div class="categories-grid">
-            <div class="category-card" onclick="window.location.href='categories/twin-flames.html'">
-                <div class="category-icon">💫</div>
-                <h3 class="category-title">Twin Flames & Spiritual Connections</h3>
-                <p class="category-description">Explore the mystical world of twin flame relationships, separation, reunion, and spiritual awakening.</p>
-                <span class="category-count">1,200+ Articles</span>
-            </div>
-            
-            <div class="category-card" onclick="window.location.href='categories/introversion.html'">
-                <div class="category-icon">🤫</div>
-                <h3 class="category-title">Introversion & Personality Types</h3>
-                <p class="category-description">Deep insights into introversion, personality traits, and understanding different personality types.</p>
-                <span class="category-count">800+ Articles</span>
-            </div>
-            
-            <div class="category-card" onclick="window.location.href='categories/angel-numbers.html'">
-                <div class="category-icon">🔢</div>
-                <h3 class="category-title">Angel Numbers & Spirituality</h3>
-                <p class="category-description">Decode the meanings behind angel numbers and their spiritual significance in your life.</p>
-                <span class="category-count">300+ Articles</span>
-            </div>
-            
-            <div class="category-card" onclick="window.location.href='categories/relationships.html'">
-                <div class="category-icon">💕</div>
-                <h3 class="category-title">Relationships & Love</h3>
-                <p class="category-description">Navigate the complexities of relationships, dating, and finding meaningful connections.</p>
-                <span class="category-count">150+ Articles</span>
-            </div>
-            
-            <div class="category-card" onclick="window.location.href='categories/self-discovery.html'">
-                <div class="category-icon">🌱</div>
-                <h3 class="category-title">Self-Discovery & Growth</h3>
-                <p class="category-description">Embark on a journey of personal growth, self-awareness, and discovering your true potential.</p>
-                <span class="category-count">200+ Articles</span>
-            </div>
-            
-            <div class="category-card" onclick="window.location.href='categories/psychology.html'">
-                <div class="category-icon">🧠</div>
-                <h3 class="category-title">Psychology & Mental Health</h3>
-                <p class="category-description">Understand the human mind, emotions, and strategies for maintaining mental wellness.</p>
-                <span class="category-count">100+ Articles</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Posts Section -->
+    <!-- Articles Section -->
     <section class="container featured-posts">
-        <h2>Featured Articles</h2>
+        <h2>Psychology Articles</h2>
         <div class="posts-grid" id="postsGrid">
-            <!-- Posts will be loaded dynamically -->
+            <!-- Articles will be loaded dynamically -->
         </div>
     </section>
 
@@ -383,11 +78,16 @@
             const postsGrid = document.getElementById('postsGrid');
 
             const articles = articleRegistry.getArticlesByCategory('psychology');
+            console.log('Found articles for psychology:', articles.length);
 
-            articles.forEach(article => {
-                const articleCard = articleRegistry.generateArticleCard(article);
-                postsGrid.innerHTML += articleCard;
-            });
+            if (articles.length === 0) {
+                postsGrid.innerHTML = '<p style="text-align: center; color: var(--text-secondary); font-size: var(--font-size-lg); margin: var(--spacing-8) 0;">No articles found in this category yet. Check back soon for new content!</p>';
+            } else {
+                articles.forEach(article => {
+                    const articleCard = articleRegistry.generateArticleCard(article);
+                    postsGrid.innerHTML += articleCard;
+                });
+            }
         });
     </script>
 
@@ -436,24 +136,22 @@
         </div>
     </footer>
 
-    <script src="../js/app.js"></script>
-    <script src="../js/article-registry.js"></script>
     <script>
         // Blog search functionality
         document.getElementById('blogSearch').addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
-            // Implement search functionality here
-            console.log('Searching for:', searchTerm);
-        });
-
-        // Category card click effects
-        document.querySelectorAll('.category-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px)';
-            });
+            const articleCards = document.querySelectorAll('.article-card');
             
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(-4px)';
+            articleCards.forEach(card => {
+                const title = card.querySelector('.article-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.article-excerpt').textContent.toLowerCase();
+                const tags = card.getAttribute('data-tags').toLowerCase();
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm) || tags.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
             });
         });
 
@@ -463,8 +161,28 @@
         
         // Update theme toggle icon
         const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = themeToggle.querySelector('.theme-icon');
-        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        if (themeToggle) {
+            const themeIcon = themeToggle.querySelector('.theme-icon');
+            if (themeIcon) {
+                themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+
+        // Theme toggle functionality
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('personality-spark-theme', newTheme);
+                
+                const themeIcon = this.querySelector('.theme-icon');
+                if (themeIcon) {
+                    themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+                }
+            });
+        }
     </script>
 </body>
 </html>

@@ -1551,8 +1551,10 @@ class ArticleRegistry {
     `<span class="article-tag">${tag.charAt(0).toUpperCase() + tag.slice(1).replace('-', ' ')}</span>`
   ).join('');
 
+  const pathPrefix = window.location.pathname.includes('/categories/') ? '../posts/' : 'posts/';
+  
   return `
-    <a href="../posts/${article.filename}" class="article-card" data-tags="${article.tags.join(',')}">
+    <a href="${pathPrefix}${article.filename}" class="article-card" data-tags="${article.tags.join(',')}">
         <div class="article-meta">
             <span>📅 ${this.formatDate(article.date)}</span>
             <span>📖 ${article.readTime} read</span>
