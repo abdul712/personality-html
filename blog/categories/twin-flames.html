@@ -9,7 +9,7 @@
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Twin Flame Articles - PersonalitySpark Blog">
-    <meta property="og:description" content="Comprehensive articles on twin flame relationships, spiritual connections, and divine love">
+    <meta property="og:description" content="Explore comprehensive articles on twin flame relationships, spiritual connections, separation, reunion, and awakening. Expert insights on twin flame runner, chaser dynamics, and divine love.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://personalityspark.com/blog/categories/twin-flames.html">
     <meta property="og:image" content="https://personalityspark.com/assets/icons/icon-512.png">
@@ -17,247 +17,6 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
     <link rel="canonical" href="https://personalityspark.com/blog/categories/twin-flames.html">
-    
-    <style>
-        .blog-hero {
-            background: linear-gradient(135deg, var(--primary-50) 0%, var(--secondary-50) 100%);
-            padding: var(--spacing-16) var(--spacing-6);
-            text-align: center;
-            margin-bottom: var(--spacing-12);
-        }
-        
-        .blog-hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary-600);
-            margin-bottom: var(--spacing-4);
-        }
-        
-        .blog-hero p {
-            font-size: var(--font-size-lg);
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-6);
-            margin-bottom: var(--spacing-12);
-        }
-        
-        .category-card {
-            background: var(--bg-secondary);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-6);
-            border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .category-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary-300);
-        }
-        
-        .category-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--spacing-4);
-        }
-        
-        .category-title {
-            font-size: var(--font-size-xl);
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--spacing-2);
-        }
-        
-        .category-description {
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-4);
-        }
-        
-        .category-count {
-            font-size: var(--font-size-sm);
-            color: var(--primary-600);
-            font-weight: 500;
-        }
-        
-        .featured-posts {
-            background: var(--bg-secondary);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-8);
-            margin-bottom: var(--spacing-12);
-        }
-        
-        .featured-posts h2 {
-            font-size: var(--font-size-2xl);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: var(--spacing-6);
-            text-align: center;
-        }
-        
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--spacing-6);
-        }
-        
-        .post-card {
-            background: var(--bg-primary);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-5);
-            border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
-        }
-        
-        .post-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .post-meta {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-2);
-            margin-bottom: var(--spacing-3);
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
-        }
-        
-        .post-category-tag {
-            background: var(--primary-100);
-            color: var(--primary-700);
-            padding: var(--spacing-1) var(--spacing-2);
-            border-radius: var(--radius-sm);
-            font-size: var(--font-size-xs);
-            font-weight: 500;
-        }
-        
-        .post-title {
-            font-size: var(--font-size-lg);
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--spacing-3);
-            line-height: 1.4;
-        }
-        
-        .post-excerpt {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: var(--spacing-4);
-        }
-        
-        .read-more {
-            color: var(--primary-600);
-            font-weight: 500;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: var(--spacing-1);
-        }
-        
-        .read-more:hover {
-            color: var(--primary-700);
-        }
-        
-        .search-section {
-            text-align: center;
-            margin-bottom: var(--spacing-12);
-        }
-        
-        .search-box {
-            max-width: 500px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .search-input {
-            width: 100%;
-            padding: var(--spacing-3) var(--spacing-4);
-            border: 2px solid var(--gray-300);
-            border-radius: var(--radius-md);
-            font-size: var(--font-size-base);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-        }
-        
-        .search-input:focus {
-            outline: none;
-            border-color: var(--primary-500);
-        }
-        
-        .stats-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--spacing-4);
-            margin-bottom: var(--spacing-8);
-        }
-        
-        .stat-card {
-            background: var(--bg-secondary);
-            padding: var(--spacing-4);
-            border-radius: var(--radius-md);
-            text-align: center;
-            border: 1px solid var(--gray-200);
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-600);
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
-            margin-top: var(--spacing-1);
-        }
-        
-        @media (max-width: 768px) {
-            .blog-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .posts-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Dark theme overrides */
-        [data-theme="dark"] .category-card {
-            background: var(--bg-accent);
-            border-color: var(--gray-600);
-        }
-        
-        [data-theme="dark"] .featured-posts {
-            background: var(--bg-accent);
-        }
-        
-        [data-theme="dark"] .post-card {
-            background: var(--bg-secondary);
-            border-color: var(--gray-600);
-        }
-        
-        [data-theme="dark"] .search-input {
-            background: var(--bg-secondary);
-            border-color: var(--gray-600);
-            color: var(--text-primary);
-        }
-        
-        [data-theme="dark"] .stat-card {
-            background: var(--bg-accent);
-            border-color: var(--gray-600);
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -298,13 +57,13 @@
 
     <!-- Search Section -->
     <section class="container search-section">
-        <h2 style="margin-bottom: var(--spacing-4); color: var(--text-primary);">Search Twin Flame Articles</h2>
+        <h2 style="margin-bottom: var(--spacing-4); color: var(--text-primary);">Twin Flame Articles Search</h2>
         <div class="search-box">
             <input type="text" class="search-input" placeholder="Search twin flame articles..." id="blogSearch">
         </div>
     </section>
 
-    <!-- Twin Flame Articles Section -->
+    <!-- Articles Section -->
     <section class="container featured-posts">
         <h2>Twin Flame Articles</h2>
         <div class="posts-grid" id="postsGrid">
@@ -312,19 +71,23 @@
         </div>
     </section>
 
-    <script src="../js/article-registry.js"></script>
+    <script src="../../blog/js/article-registry.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const articleRegistry = new ArticleRegistry();
             const postsGrid = document.getElementById('postsGrid');
 
             const articles = articleRegistry.getArticlesByCategory('twin-flames');
-            console.log(articles);
+            console.log('Found articles for twin-flames:', articles.length);
 
-            articles.forEach(article => {
-                const articleCard = articleRegistry.generateArticleCard(article);
-                postsGrid.innerHTML += articleCard;
-            });
+            if (articles.length === 0) {
+                postsGrid.innerHTML = '<p style="text-align: center; color: var(--text-secondary); font-size: var(--font-size-lg); margin: var(--spacing-8) 0;">No articles found in this category yet. Check back soon for new content!</p>';
+            } else {
+                articles.forEach(article => {
+                    const articleCard = articleRegistry.generateArticleCard(article);
+                    postsGrid.innerHTML += articleCard;
+                });
+            }
         });
     </script>
 
