@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover your true personality with AI-powered quizzes. Take fun, engaging personality tests and explore your unique traits. No registration required!">
+    <meta name="keywords" content="personality quiz, personality test, AI quiz, Big 5 personality, self-discovery, psychology quiz">
+    <meta name="author" content="PersonalitySpark">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="PersonalitySpark - Discover Your True Personality">
+    <meta property="og:description" content="Take AI-powered personality quizzes and discover insights about yourself. Fun, engaging, and shareable results.">
+    <meta property="og:image" content="https://personalityspark.com/assets/images/og-image.jpg">
+    <meta property="og:url" content="https://personalityspark.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PersonalitySpark - Discover Your True Personality">
+    <meta name="twitter:description" content="Take AI-powered personality quizzes and discover insights about yourself.">
+    <meta name="twitter:image" content="https://personalityspark.com/assets/images/og-image.jpg">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#f97316">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="PersonalitySpark">
+    
+    <title>PersonalitySpark - Discover Your True Personality with AI-Powered Quizzes</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" href="./assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "PersonalitySpark",
+        "url": "https://personalityspark.com",
+        "description": "AI-powered personality quizzes for self-discovery",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://personalityspark.com/quizzes?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+        </div>
+        <p>Loading PersonalitySpark...</p>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <a href="/" class="brand-link">
+                    <span class="brand-icon">✨</span>
+                    <span class="brand-text">PersonalitySpark</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active" data-page="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#quizzes" class="nav-link" data-page="quizzes">Quizzes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link" data-page="about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link" data-page="contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button class="btn btn-primary" id="start-quiz-btn">Start Quiz</button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" id="main-content">
+        <!-- Home Page -->
+        <div class="page active" id="home-page">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1 class="hero-title">
+                                Discover Your 
+                                <span class="gradient-text">True Personality</span>
+                                with AI
+                            </h1>
+                            <p class="hero-description">
+                                Take engaging, AI-powered personality quizzes and uncover fascinating insights about yourself. 
+                                No registration required - just pure fun and self-discovery!
+                            </p>
+                            <div class="hero-actions">
+                                <button class="btn btn-primary btn-large" id="hero-start-quiz">
+                                    Start Your Journey
+                                    <span class="btn-icon">→</span>
+                                </button>
+                                <button class="btn btn-outline btn-large" id="hero-daily-quiz">
+                                    Daily Challenge
+                                    <span class="btn-icon">⚡</span>
+                                </button>
+                            </div>
+                            <div class="hero-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number" data-count="50000">0</span>
+                                    <span class="stat-label">Quizzes Taken</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" data-count="15000">0</span>
+                                    <span class="stat-label">Happy Users</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" data-count="95">0</span>
+                                    <span class="stat-label">% Accuracy</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-visual">
+                            <div class="personality-wheel">
+                                <div class="wheel-center">
+                                    <span class="wheel-emoji">🧠</span>
+                                </div>
+                                <div class="wheel-segment" style="--rotation: 0deg; --color: #ff6b6b;">
+                                    <span>Creative</span>
+                                </div>
+                                <div class="wheel-segment" style="--rotation: 72deg; --color: #4ecdc4;">
+                                    <span>Analytical</span>
+                                </div>
+                                <div class="wheel-segment" style="--rotation: 144deg; --color: #45b7d1;">
+                                    <span>Social</span>
+                                </div>
+                                <div class="wheel-segment" style="--rotation: 216deg; --color: #96ceb4;">
+                                    <span>Practical</span>
+                                </div>
+                                <div class="wheel-segment" style="--rotation: 288deg; --color: #feca57;">
+                                    <span>Intuitive</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Why Choose PersonalitySpark?</h2>
+                        <p class="section-description">
+                            Experience the future of personality assessment with our AI-powered platform
+                        </p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🤖</div>
+                            <h3 class="feature-title">AI-Powered</h3>
+                            <p class="feature-description">
+                                Our advanced AI creates unique quizzes every time, ensuring fresh and personalized experiences.
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h3 class="feature-title">Instant Results</h3>
+                            <p class="feature-description">
+                                Get detailed personality insights in minutes with beautiful visualizations and actionable advice.
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h3 class="feature-title">Scientifically Based</h3>
+                            <p class="feature-description">
+                                Built on proven psychological frameworks like the Big Five personality model for accuracy.
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔒</div>
+                            <h3 class="feature-title">Privacy First</h3>
+                            <p class="feature-description">
+                                No registration required. Your data stays private and secure - take quizzes anonymously.
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📱</div>
+                            <h3 class="feature-title">Mobile Friendly</h3>
+                            <p class="feature-description">
+                                Perfect experience on any device - desktop, tablet, or mobile. Take quizzes anywhere!
+                            </p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎉</div>
+                            <h3 class="feature-title">Fun & Engaging</h3>
+                            <p class="feature-description">
+                                Interactive questions, beautiful animations, and shareable results make self-discovery enjoyable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz Types Section -->
+            <section class="quiz-types">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Explore Your Personality</h2>
+                        <p class="section-description">
+                            Choose from our variety of scientifically-backed personality assessments
+                        </p>
+                    </div>
+                    <div class="quiz-types-grid">
+                        <div class="quiz-type-card" data-quiz-type="big5">
+                            <div class="quiz-type-header">
+                                <div class="quiz-type-icon">🏆</div>
+                                <div class="quiz-type-badge">Most Popular</div>
+                            </div>
+                            <h3 class="quiz-type-title">Big 5 Personality</h3>
+                            <p class="quiz-type-description">
+                                Discover your openness, conscientiousness, extraversion, agreeableness, and neuroticism levels.
+                            </p>
+                            <div class="quiz-type-meta">
+                                <span class="quiz-duration">⏱️ 10-15 min</span>
+                                <span class="quiz-questions">📝 30 questions</span>
+                            </div>
+                            <button class="btn btn-primary quiz-type-btn">Take Quiz</button>
+                        </div>
+                        
+                        <div class="quiz-type-card" data-quiz-type="daily">
+                            <div class="quiz-type-header">
+                                <div class="quiz-type-icon">📅</div>
+                                <div class="quiz-type-badge">Daily Challenge</div>
+                            </div>
+                            <h3 class="quiz-type-title">Daily Personality Challenge</h3>
+                            <p class="quiz-type-description">
+                                Quick daily quiz that explores different aspects of your personality each day.
+                            </p>
+                            <div class="quiz-type-meta">
+                                <span class="quiz-duration">⏱️ 3-5 min</span>
+                                <span class="quiz-questions">📝 10 questions</span>
+                            </div>
+                            <button class="btn btn-primary quiz-type-btn">Take Today's Quiz</button>
+                        </div>
+                        
+                        <div class="quiz-type-card" data-quiz-type="quick">
+                            <div class="quiz-type-header">
+                                <div class="quiz-type-icon">⚡</div>
+                                <div class="quiz-type-badge">Quick & Fun</div>
+                            </div>
+                            <h3 class="quiz-type-title">Quick Assessment</h3>
+                            <p class="quiz-type-description">
+                                Get instant personality insights with our rapid-fire 5-question assessment.
+                            </p>
+                            <div class="quiz-type-meta">
+                                <span class="quiz-duration">⏱️ 2 min</span>
+                                <span class="quiz-questions">📝 5 questions</span>
+                            </div>
+                            <button class="btn btn-primary quiz-type-btn">Quick Start</button>
+                        </div>
+                        
+                        <div class="quiz-type-card" data-quiz-type="thisorthat">
+                            <div class="quiz-type-header">
+                                <div class="quiz-type-icon">🎯</div>
+                                <div class="quiz-type-badge">Choice Based</div>
+                            </div>
+                            <h3 class="quiz-type-title">This or That</h3>
+                            <p class="quiz-type-description">
+                                Make quick choices between options to reveal your personality preferences and traits.
+                            </p>
+                            <div class="quiz-type-meta">
+                                <span class="quiz-duration">⏱️ 5 min</span>
+                                <span class="quiz-questions">📝 15 questions</span>
+                            </div>
+                            <button class="btn btn-primary quiz-type-btn">Choose Away</button>
+                        </div>
+                        
+                        <div class="quiz-type-card" data-quiz-type="mood">
+                            <div class="quiz-type-header">
+                                <div class="quiz-type-icon">🌈</div>
+                                <div class="quiz-type-badge">Emotional</div>
+                            </div>
+                            <h3 class="quiz-type-title">Mood-Based Test</h3>
+                            <p class="quiz-type-description">
+                                Explore how your current mood influences your personality expression and decision-making.
+                            </p>
+                            <div class="quiz-type-meta">
+                                <span class="quiz-duration">⏱️ 7 min</span>
+                                <span class="quiz-questions">📝 20 questions</span>
+                            </div>
+                            <button class="btn btn-primary quiz-type-btn">Explore Mood</button>
+                        </div>
+                        
+                        <div class="quiz-type-card" data-quiz-type="career">
+                            <div class="quiz-type-header">
+                                <div class="quiz-type-icon">💼</div>
+                                <div class="quiz-type-badge">Professional</div>
+                            </div>
+                            <h3 class="quiz-type-title">Career Match</h3>
+                            <p class="quiz-type-description">
+                                Discover which career paths align best with your personality traits and work style.
+                            </p>
+                            <div class="quiz-type-meta">
+                                <span class="quiz-duration">⏱️ 12 min</span>
+                                <span class="quiz-questions">📝 25 questions</span>
+                            </div>
+                            <button class="btn btn-primary quiz-type-btn">Find Career</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section class="how-it-works">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">How It Works</h2>
+                        <p class="section-description">
+                            Simple, fast, and insightful - discover your personality in three easy steps
+                        </p>
+                    </div>
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3 class="step-title">Choose Your Quiz</h3>
+                                <p class="step-description">
+                                    Select from our variety of personality assessments based on your interests and available time.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step-connector"></div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3 class="step-title">Answer Questions</h3>
+                                <p class="step-description">
+                                    Respond honestly to thought-provoking questions. There are no right or wrong answers!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step-connector"></div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3 class="step-title">Get Insights</h3>
+                                <p class="step-description">
+                                    Receive detailed personality analysis with beautiful visualizations and actionable insights.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="testimonials">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">What Our Users Say</h2>
+                        <p class="section-description">
+                            Real stories from people who discovered amazing insights about themselves
+                        </p>
+                    </div>
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                            </div>
+                            <blockquote class="testimonial-text">
+                                "I was amazed by how accurate the results were! The AI-generated questions felt so personalized and really made me think about who I am."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">👩‍💼</div>
+                                <div class="author-info">
+                                    <span class="author-name">Sarah M.</span>
+                                    <span class="author-title">Marketing Manager</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                            </div>
+                            <blockquote class="testimonial-text">
+                                "The visualizations are beautiful and the insights helped me understand my strengths better. I shared my results with friends!"
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">👨‍🎓</div>
+                                <div class="author-info">
+                                    <span class="author-name">Alex T.</span>
+                                    <span class="author-title">College Student</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                            </div>
+                            <blockquote class="testimonial-text">
+                                "Quick, fun, and surprisingly insightful. I love that I don't need to sign up - just jump right in and discover something new about myself!"
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">👨‍💻</div>
+                                <div class="author-info">
+                                    <span class="author-name">Mike R.</span>
+                                    <span class="author-title">Software Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta">
+                <div class="container">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Ready to Discover Your True Self?</h2>
+                        <p class="cta-description">
+                            Join thousands of people who have already unlocked fascinating insights about their personality. 
+                            Start your journey of self-discovery today!
+                        </p>
+                        <div class="cta-actions">
+                            <button class="btn btn-primary btn-large" id="cta-start-quiz">
+                                Start Your First Quiz
+                                <span class="btn-icon">🚀</span>
+                            </button>
+                            <p class="cta-note">No registration required • Takes just 5 minutes • Get instant results</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Quizzes Page -->
+        <div class="page" id="quizzes-page">
+            <section class="page-hero">
+                <div class="container">
+                    <h1 class="page-title">Personality Quizzes</h1>
+                    <p class="page-description">
+                        Explore our collection of AI-powered personality assessments designed to help you understand yourself better.
+                    </p>
+                    <div class="quiz-search">
+                        <input type="text" id="quiz-search-input" placeholder="Search for a quiz type..." class="search-input">
+                        <button class="search-btn" id="quiz-search-btn">🔍</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="quiz-categories">
+                <div class="container">
+                    <div class="category-filters">
+                        <button class="filter-btn active" data-category="all">All Quizzes</button>
+                        <button class="filter-btn" data-category="personality">Personality</button>
+                        <button class="filter-btn" data-category="career">Career</button>
+                        <button class="filter-btn" data-category="quick">Quick Tests</button>
+                        <button class="filter-btn" data-category="daily">Daily Challenges</button>
+                    </div>
+                    
+                    <div class="quiz-grid" id="quiz-grid">
+                        <!-- Quiz cards will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Quiz Taking Page -->
+        <div class="page" id="quiz-page">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <span class="progress-text" id="progress-text">Question 1 of 10</span>
+                    </div>
+                    <button class="btn btn-outline" id="quiz-exit-btn">Exit Quiz</button>
+                </div>
+                
+                <div class="quiz-content" id="quiz-content">
+                    <!-- Quiz questions will be populated by JavaScript -->
+                </div>
+                
+                <div class="quiz-navigation">
+                    <button class="btn btn-outline" id="quiz-prev-btn" disabled>Previous</button>
+                    <button class="btn btn-primary" id="quiz-next-btn" disabled>Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Page -->
+        <div class="page" id="results-page">
+            <div class="results-container">
+                <div class="results-header">
+                    <h1 class="results-title">Your Personality Results</h1>
+                    <p class="results-subtitle">Here's what we discovered about your unique personality</p>
+                </div>
+                
+                <div class="results-content" id="results-content">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+                
+                <div class="results-actions">
+                    <button class="btn btn-primary" id="share-results-btn">Share Results</button>
+                    <button class="btn btn-outline" id="retake-quiz-btn">Take Another Quiz</button>
+                    <button class="btn btn-outline" id="download-results-btn">Download Results</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div class="page" id="about-page">
+            <section class="page-hero">
+                <div class="container">
+                    <h1 class="page-title">About PersonalitySpark</h1>
+                    <p class="page-description">
+                        We're on a mission to make personality psychology accessible, fun, and insightful for everyone.
+                    </p>
+                </div>
+            </section>
+            
+            <section class="about-content">
+                <div class="container">
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <h2>Our Story</h2>
+                            <p>
+                                PersonalitySpark was founded in 2024 by a team of psychologists, data scientists, and AI researchers who believed that personality assessment tools were outdated and inaccessible. Traditional personality tests often felt clinical and boring, with static questions that didn't adapt to modern lifestyles and communication patterns.
+                            </p>
+                            <p>
+                                We saw an opportunity to revolutionize personality assessment by combining cutting-edge AI technology with established psychological frameworks. Our goal was simple: make self-discovery fun, accessible, and surprisingly accurate for everyone.
+                            </p>
+
+                            <h2>Our Mission</h2>
+                            <p>
+                                PersonalitySpark democratizes access to personality insights through intelligent AI technology. We believe that understanding yourself is the first step toward personal growth, better relationships, career satisfaction, and a more fulfilling life. Our platform breaks down barriers by eliminating registration requirements, costs, and complicated interfaces.
+                            </p>
+                            
+                            <h2>How We're Different</h2>
+                            <p>
+                                Unlike traditional personality tests that use static questions written decades ago, our AI generates unique, contextual quizzes tailored to contemporary psychology research and current cultural contexts. Every quiz experience is fresh, relevant, and designed to uncover new insights about your personality while respecting your time and privacy.
+                            </p>
+                            <ul class="about-features-list">
+                                <li><strong>Dynamic Questions:</strong> AI generates personalized questions based on your responses</li>
+                                <li><strong>Modern Context:</strong> Questions reflect contemporary life, work, and social situations</li>
+                                <li><strong>No Registration:</strong> Start taking quizzes immediately without any barriers</li>
+                                <li><strong>Instant Results:</strong> Get comprehensive insights in minutes, not hours</li>
+                                <li><strong>Mobile-First:</strong> Designed for smartphones with intuitive touch interfaces</li>
+                                <li><strong>Shareable Results:</strong> Beautiful visualizations perfect for social media</li>
+                            </ul>
+                            
+                            <h2>Scientific Foundation</h2>
+                            <p>
+                                Our assessments are built on established psychological frameworks including the Big Five personality model (OCEAN), which has decades of research validation. We work with licensed psychologists and continuously update our algorithms based on the latest personality psychology research.
+                            </p>
+                            <p>
+                                While our questions are AI-generated, the underlying scoring mechanisms and personality dimensions are grounded in peer-reviewed research and validated assessment methodologies.
+                            </p>
+
+                            <h2>Privacy & Security</h2>
+                            <p>
+                                Your privacy is our absolute priority. We believe personality insights are deeply personal and should remain under your control. We've designed our platform with privacy-first principles:
+                            </p>
+                            <ul class="privacy-list">
+                                <li>No account creation or personal information required</li>
+                                <li>Quiz responses are processed in real-time and not stored permanently</li>
+                                <li>Results are stored locally on your device only</li>
+                                <li>No tracking cookies or invasive analytics</li>
+                                <li>All data processing happens securely with enterprise-grade encryption</li>
+                                <li>You decide what to share and with whom</li>
+                            </ul>
+
+                            <h2>Our Team</h2>
+                            <p>
+                                PersonalitySpark is built by a diverse team of experts passionate about psychology, technology, and human potential:
+                            </p>
+                            <ul class="team-list">
+                                <li><strong>Licensed Psychologists:</strong> Ensure scientific accuracy and ethical standards</li>
+                                <li><strong>AI Researchers:</strong> Develop intelligent question generation and analysis systems</li>
+                                <li><strong>UX Designers:</strong> Create intuitive, engaging user experiences</li>
+                                <li><strong>Data Scientists:</strong> Analyze patterns and improve assessment accuracy</li>
+                                <li><strong>Software Engineers:</strong> Build fast, secure, and scalable platform infrastructure</li>
+                            </ul>
+
+                            <h2>Future Vision</h2>
+                            <p>
+                                We're continuously expanding PersonalitySpark with new assessment types, improved AI capabilities, and enhanced insights. Our roadmap includes specialized assessments for relationships, career development, team dynamics, and personal growth tracking over time.
+                            </p>
+                            <p>
+                                We envision a world where everyone has easy access to accurate personality insights that help them make better decisions, build stronger relationships, and live more authentically.
+                            </p>
+                        </div>
+                        
+                        <div class="about-features">
+                            <div class="feature-stat">
+                                <div class="stat-icon">🤖</div>
+                                <div class="stat-content">
+                                    <h3>AI-Powered</h3>
+                                    <p>Advanced algorithms create personalized quiz experiences that adapt to your responses in real-time</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-stat">
+                                <div class="stat-icon">🔬</div>
+                                <div class="stat-content">
+                                    <h3>Science-Based</h3>
+                                    <p>Built on validated psychological research including Big Five, MBTI principles, and modern personality frameworks</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-stat">
+                                <div class="stat-icon">🌍</div>
+                                <div class="stat-content">
+                                    <h3>Global Accessibility</h3>
+                                    <p>Available worldwide with culturally sensitive assessments and multi-language support</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-stat">
+                                <div class="stat-icon">🚀</div>
+                                <div class="stat-content">
+                                    <h3>Continuously Evolving</h3>
+                                    <p>Regular updates based on user feedback, research advances, and AI improvements</p>
+                                </div>
+                            </div>
+
+                            <div class="feature-stat">
+                                <div class="stat-icon">🔒</div>
+                                <div class="stat-content">
+                                    <h3>Privacy-First</h3>
+                                    <p>No registration required, local data storage, and complete control over your personal insights</p>
+                                </div>
+                            </div>
+
+                            <div class="feature-stat">
+                                <div class="stat-icon">⚡</div>
+                                <div class="stat-content">
+                                    <h3>Instant Results</h3>
+                                    <p>Get comprehensive personality insights in minutes with beautiful visualizations and actionable advice</p>
+                                </div>
+                            </div>
+
+                            <div class="stats-section">
+                                <h3>By the Numbers</h3>
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <span class="stat-number">50,000+</span>
+                                        <span class="stat-label">Quizzes Completed</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">15,000+</span>
+                                        <span class="stat-label">Happy Users</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">95%</span>
+                                        <span class="stat-label">Accuracy Rating</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">24/7</span>
+                                        <span class="stat-label">Available</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-cta">
+                                <h3>Get in Touch</h3>
+                                <p>Have questions about our methodology, want to collaborate, or need support?</p>
+                                <button class="btn btn-primary" onclick="window.PSNavigation.navigateToPage('contact')">Contact Us</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div class="page" id="contact-page">
+            <section class="page-hero">
+                <div class="container">
+                    <h1 class="page-title">Get In Touch</h1>
+                    <p class="page-description">
+                        Have questions, feedback, or suggestions? We'd love to hear from you!
+                    </p>
+                </div>
+            </section>
+            
+            <section class="contact-content">
+                <div class="container">
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <h2>Contact Information</h2>
+                            <div class="contact-item">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-details">
+                                    <h3>Email</h3>
+                                    <p>hello@personalityspark.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">💬</div>
+                                <div class="contact-details">
+                                    <h3>Support</h3>
+                                    <p>support@personalityspark.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">🐛</div>
+                                <div class="contact-details">
+                                    <h3>Bug Reports</h3>
+                                    <p>bugs@personalityspark.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="social-links">
+                                <h3>Follow Us</h3>
+                                <div class="social-buttons">
+                                    <a href="#" class="social-btn">📘 Facebook</a>
+                                    <a href="#" class="social-btn">🐦 Twitter</a>
+                                    <a href="#" class="social-btn">📸 Instagram</a>
+                                    <a href="#" class="social-btn">💼 LinkedIn</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-form">
+                            <h2>Send us a Message</h2>
+                            <form id="contact-form">
+                                <div class="form-group">
+                                    <label for="contact-name">Name</label>
+                                    <input type="text" id="contact-name" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-email">Email</label>
+                                    <input type="email" id="contact-email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-subject">Subject</label>
+                                    <select id="contact-subject" name="subject" required>
+                                        <option value="">Select a topic</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="bug">Bug Report</option>
+                                        <option value="feature">Feature Request</option>
+                                        <option value="partnership">Partnership</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-message">Message</label>
+                                    <textarea id="contact-message" name="message" rows="5" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Terms of Service Page -->
+        <div class="page" id="terms-page">
+            <section class="page-hero">
+                <div class="container">
+                    <h1 class="page-title">Terms of Service</h1>
+                    <p class="page-description">
+                        Please read these terms carefully before using PersonalitySpark.
+                    </p>
+                    <p class="last-updated">Last updated: January 18, 2025</p>
+                </div>
+            </section>
+            
+            <section class="legal-content">
+                <div class="container">
+                    <div class="legal-text">
+                        <h2>1. Acceptance of Terms</h2>
+                        <p>
+                            By accessing and using PersonalitySpark ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this Service.
+                        </p>
+
+                        <h2>2. Description of Service</h2>
+                        <p>
+                            PersonalitySpark provides AI-powered personality assessment tools and quizzes designed for entertainment, self-discovery, and educational purposes. The Service includes:
+                        </p>
+                        <ul>
+                            <li>Interactive personality quizzes and assessments</li>
+                            <li>AI-generated personality insights and reports</li>
+                            <li>Social sharing features for quiz results</li>
+                            <li>Educational content about personality psychology</li>
+                        </ul>
+
+                        <h2>3. Use License</h2>
+                        <p>
+                            Permission is granted to temporarily use PersonalitySpark for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+                        </p>
+                        <ul>
+                            <li>Modify or copy the materials</li>
+                            <li>Use the materials for any commercial purpose or for any public display</li>
+                            <li>Attempt to decompile or reverse engineer any software contained on the website</li>
+                            <li>Remove any copyright or other proprietary notations from the materials</li>
+                            <li>Use automated tools to access or interact with the Service</li>
+                        </ul>
+
+                        <h2>4. User Conduct</h2>
+                        <p>You agree to use PersonalitySpark responsibly and agree not to:</p>
+                        <ul>
+                            <li>Violate any applicable laws or regulations</li>
+                            <li>Impersonate any person or entity</li>
+                            <li>Share inappropriate, offensive, or harmful content</li>
+                            <li>Attempt to gain unauthorized access to our systems</li>
+                            <li>Interfere with or disrupt the Service or servers</li>
+                            <li>Use the Service to harass, abuse, or harm another person</li>
+                        </ul>
+
+                        <h2>5. Privacy and Data Use</h2>
+                        <p>
+                            Your privacy is important to us. PersonalitySpark is designed with privacy-first principles:
+                        </p>
+                        <ul>
+                            <li>No personal information is required to use the Service</li>
+                            <li>Quiz responses are processed in real-time and not permanently stored</li>
+                            <li>Results are stored locally on your device</li>
+                            <li>We do not sell, rent, or share your personal data</li>
+                            <li>See our Privacy Policy for complete details</li>
+                        </ul>
+
+                        <h2>6. Disclaimers</h2>
+                        <p>
+                            <strong>Educational and Entertainment Purpose:</strong> PersonalitySpark assessments are designed for entertainment, educational, and self-reflection purposes only. They are not intended as:
+                        </p>
+                        <ul>
+                            <li>Professional psychological evaluations</li>
+                            <li>Medical or mental health diagnoses</li>
+                            <li>Employment screening tools</li>
+                            <li>Relationship counseling advice</li>
+                            <li>Legal or financial guidance</li>
+                        </ul>
+                        <p>
+                            <strong>Accuracy:</strong> While we strive for accuracy, personality assessments are subjective tools and results may vary. We make no warranties about the accuracy, reliability, or completeness of any assessment results.
+                        </p>
+
+                        <h2>7. Limitations of Liability</h2>
+                        <p>
+                            In no event shall PersonalitySpark or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use PersonalitySpark, even if PersonalitySpark or an authorized representative has been notified orally or in writing of the possibility of such damage.
+                        </p>
+
+                        <h2>8. Intellectual Property</h2>
+                        <p>
+                            The Service and its original content, features, and functionality are and will remain the exclusive property of PersonalitySpark and its licensors. The Service is protected by copyright, trademark, and other laws. Our trademarks and trade dress may not be used in connection with any product or service without our prior written consent.
+                        </p>
+
+                        <h2>9. AI-Generated Content</h2>
+                        <p>
+                            PersonalitySpark uses artificial intelligence to generate quiz questions and personality insights. While we strive for quality and appropriateness:
+                        </p>
+                        <ul>
+                            <li>AI-generated content may occasionally be inaccurate or inappropriate</li>
+                            <li>We continuously improve our AI systems but cannot guarantee perfection</li>
+                            <li>Users should apply critical thinking to all results and insights</li>
+                            <li>Report any problematic content through our contact channels</li>
+                        </ul>
+
+                        <h2>10. Termination</h2>
+                        <p>
+                            We may terminate or suspend your access to the Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use the Service will cease immediately.
+                        </p>
+
+                        <h2>11. Changes to Terms</h2>
+                        <p>
+                            We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
+                        </p>
+
+                        <h2>12. Governing Law</h2>
+                        <p>
+                            These Terms shall be interpreted and governed by the laws of the jurisdiction in which PersonalitySpark operates, without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
+                        </p>
+
+                        <h2>13. Severability</h2>
+                        <p>
+                            If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
+                        </p>
+
+                        <h2>14. Contact Information</h2>
+                        <p>
+                            If you have any questions about these Terms of Service, please contact us at:
+                        </p>
+                        <div class="contact-info">
+                            <p><strong>Email:</strong> legal@personalityspark.com</p>
+                            <p><strong>Support:</strong> support@personalityspark.com</p>
+                        </div>
+
+                        <div class="legal-footer">
+                            <p><strong>Effective Date:</strong> January 18, 2025</p>
+                            <p>These terms constitute the entire agreement between you and PersonalitySpark regarding the use of the Service.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Privacy Policy Page -->
+        <div class="page" id="privacy-page">
+            <section class="page-hero">
+                <div class="container">
+                    <h1 class="page-title">Privacy Policy</h1>
+                    <p class="page-description">
+                        Your privacy is our priority. Learn how we protect your personal information.
+                    </p>
+                    <p class="last-updated">Last updated: January 18, 2025</p>
+                </div>
+            </section>
+            
+            <section class="legal-content">
+                <div class="container">
+                    <div class="legal-text">
+                        <h2>1. Information We Collect</h2>
+                        <p>
+                            PersonalitySpark is designed with privacy-first principles. We collect minimal information to provide you with the best possible experience:
+                        </p>
+                        
+                        <h3>Information You Provide Directly</h3>
+                        <ul>
+                            <li><strong>Quiz Responses:</strong> Your answers to personality assessment questions</li>
+                            <li><strong>Contact Information:</strong> Email and name if you choose to contact us (optional)</li>
+                            <li><strong>Feedback:</strong> Comments or suggestions you voluntarily share</li>
+                        </ul>
+
+                        <h3>Information Collected Automatically</h3>
+                        <ul>
+                            <li><strong>Usage Analytics:</strong> Basic metrics like page views and quiz completion rates (anonymized)</li>
+                            <li><strong>Technical Information:</strong> Browser type, device type, and basic system information</li>
+                            <li><strong>Performance Data:</strong> Loading times and error reports to improve the service</li>
+                        </ul>
+
+                        <h3>Information We DO NOT Collect</h3>
+                        <ul>
+                            <li>Personal identification information (unless voluntarily provided)</li>
+                            <li>Location data or GPS coordinates</li>
+                            <li>Social media profiles or contacts</li>
+                            <li>Financial or payment information</li>
+                            <li>Persistent tracking across other websites</li>
+                        </ul>
+
+                        <h2>2. How We Use Your Information</h2>
+                        <p>We use the information we collect to:</p>
+                        <ul>
+                            <li><strong>Provide Personality Insights:</strong> Process your quiz responses to generate personalized results</li>
+                            <li><strong>Improve Our Service:</strong> Analyze usage patterns to enhance user experience</li>
+                            <li><strong>Respond to Inquiries:</strong> Address your questions or support requests</li>
+                            <li><strong>Ensure Security:</strong> Protect against abuse and maintain service integrity</li>
+                            <li><strong>Legal Compliance:</strong> Meet applicable legal requirements and protect our rights</li>
+                        </ul>
+
+                        <h2>3. Data Storage and Security</h2>
+                        <h3>Local Storage</h3>
+                        <ul>
+                            <li>Quiz results are stored locally on your device using browser storage</li>
+                            <li>You maintain full control over your stored results</li>
+                            <li>Clear your browser data to remove all stored information</li>
+                        </ul>
+
+                        <h3>Server-Side Processing</h3>
+                        <ul>
+                            <li>Quiz responses are processed in real-time to generate results</li>
+                            <li>No permanent storage of individual responses on our servers</li>
+                            <li>All data transmission is encrypted using industry-standard protocols</li>
+                        </ul>
+
+                        <h3>Security Measures</h3>
+                        <ul>
+                            <li>Enterprise-grade encryption for all data transmission</li>
+                            <li>Regular security audits and vulnerability assessments</li>
+                            <li>Access controls and monitoring for all systems</li>
+                            <li>Secure cloud infrastructure with multiple backup layers</li>
+                        </ul>
+
+                        <h2>4. Sharing and Disclosure</h2>
+                        <p>
+                            We do not sell, rent, or share your personal information with third parties for marketing purposes. We may share information only in these limited circumstances:
+                        </p>
+                        <ul>
+                            <li><strong>Your Consent:</strong> When you explicitly choose to share results via social media</li>
+                            <li><strong>Service Providers:</strong> Trusted partners who help us operate the service (under strict confidentiality)</li>
+                            <li><strong>Legal Requirements:</strong> When required by law or to protect our rights and safety</li>
+                            <li><strong>Business Transfers:</strong> In connection with any merger, sale, or acquisition (with notice)</li>
+                        </ul>
+
+                        <h2>5. Your Privacy Rights</h2>
+                        <p>You have the following rights regarding your personal information:</p>
+                        <ul>
+                            <li><strong>Access:</strong> Request information about data we may have about you</li>
+                            <li><strong>Correction:</strong> Request correction of inaccurate information</li>
+                            <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+                            <li><strong>Portability:</strong> Request a copy of your data in a portable format</li>
+                            <li><strong>Opt-out:</strong> Decline analytics tracking (may affect service functionality)</li>
+                        </ul>
+
+                        <h2>6. Cookies and Tracking</h2>
+                        <p>PersonalitySpark uses minimal tracking technologies:</p>
+                        <ul>
+                            <li><strong>Essential Cookies:</strong> Required for basic site functionality</li>
+                            <li><strong>Analytics Cookies:</strong> Anonymous usage statistics (can be disabled)</li>
+                            <li><strong>No Third-Party Tracking:</strong> We don't use invasive advertising trackers</li>
+                            <li><strong>Local Storage:</strong> For saving your quiz results on your device</li>
+                        </ul>
+
+                        <h2>7. Children's Privacy</h2>
+                        <p>
+                            PersonalitySpark is intended for users aged 13 and older. We do not knowingly collect personal information from children under 13. If we discover we have collected information from a child under 13, we will delete it immediately. Parents who believe we may have collected information from a child under 13 should contact us.
+                        </p>
+
+                        <h2>8. International Data Transfers</h2>
+                        <p>
+                            PersonalitySpark may process information in countries other than your own. We ensure appropriate safeguards are in place to protect your information, including:
+                        </p>
+                        <ul>
+                            <li>Compliance with applicable data protection laws</li>
+                            <li>Contractual protections with service providers</li>
+                            <li>Security measures equivalent to those required in your jurisdiction</li>
+                        </ul>
+
+                        <h2>9. Data Retention</h2>
+                        <p>We retain information only as long as necessary:</p>
+                        <ul>
+                            <li><strong>Quiz Responses:</strong> Processed in real-time, not permanently stored</li>
+                            <li><strong>Analytics Data:</strong> Aggregated data retained for up to 2 years</li>
+                            <li><strong>Contact Information:</strong> Retained only while needed to respond to inquiries</li>
+                            <li><strong>Account Data:</strong> N/A - no accounts required</li>
+                        </ul>
+
+                        <h2>10. Changes to This Policy</h2>
+                        <p>
+                            We may update this Privacy Policy from time to time. We will notify you of any changes by:
+                        </p>
+                        <ul>
+                            <li>Posting the new Privacy Policy on this page</li>
+                            <li>Updating the "Last updated" date</li>
+                            <li>Providing prominent notice for material changes</li>
+                            <li>Sending email notification if you have provided contact information</li>
+                        </ul>
+
+                        <h2>11. Contact Us</h2>
+                        <p>
+                            If you have any questions about this Privacy Policy or our data practices, please contact us:
+                        </p>
+                        <div class="contact-info">
+                            <p><strong>Privacy Email:</strong> privacy@personalityspark.com</p>
+                            <p><strong>General Support:</strong> support@personalityspark.com</p>
+                            <p><strong>Data Protection Officer:</strong> dpo@personalityspark.com</p>
+                        </div>
+
+                        <div class="legal-footer">
+                            <p><strong>Effective Date:</strong> January 18, 2025</p>
+                            <p>This Privacy Policy explains how PersonalitySpark collects, uses, and protects your information when you use our Service.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Cookie Policy Page -->
+        <div class="page" id="cookies-page">
+            <section class="page-hero">
+                <div class="container">
+                    <h1 class="page-title">Cookie Policy</h1>
+                    <p class="page-description">
+                        Learn how we use cookies and similar technologies to enhance your experience.
+                    </p>
+                    <p class="last-updated">Last updated: January 18, 2025</p>
+                </div>
+            </section>
+            
+            <section class="legal-content">
+                <div class="container">
+                    <div class="legal-text">
+                        <h2>1. What Are Cookies?</h2>
+                        <p>
+                            Cookies are small text files that are stored on your device when you visit a website. They help websites remember information about your visit, making your next visit easier and the site more useful to you.
+                        </p>
+
+                        <h2>2. How PersonalitySpark Uses Cookies</h2>
+                        <p>
+                            PersonalitySpark uses cookies sparingly and only for essential functionality and improving your experience:
+                        </p>
+
+                        <h3>Essential Cookies (Always Active)</h3>
+                        <ul>
+                            <li><strong>Site Functionality:</strong> Remember your theme preference (light/dark mode)</li>
+                            <li><strong>Session Management:</strong> Maintain your quiz progress during a session</li>
+                            <li><strong>Security:</strong> Protect against malicious attacks and abuse</li>
+                            <li><strong>Performance:</strong> Ensure the site loads correctly and functions properly</li>
+                        </ul>
+
+                        <h3>Analytics Cookies (Optional)</h3>
+                        <ul>
+                            <li><strong>Usage Statistics:</strong> Anonymous data about how visitors use the site</li>
+                            <li><strong>Performance Monitoring:</strong> Identify and fix technical issues</li>
+                            <li><strong>Feature Improvement:</strong> Understand which features are most popular</li>
+                            <li><strong>Error Tracking:</strong> Monitor and resolve bugs and errors</li>
+                        </ul>
+
+                        <h2>3. Third-Party Cookies</h2>
+                        <p>
+                            PersonalitySpark minimizes the use of third-party cookies. We may use:
+                        </p>
+                        <ul>
+                            <li><strong>Analytics Providers:</strong> Google Analytics for anonymous usage statistics (can be disabled)</li>
+                            <li><strong>Content Delivery:</strong> CDN services for faster loading (essential for functionality)</li>
+                            <li><strong>No Advertising Cookies:</strong> We do not use cookies for advertising or tracking across sites</li>
+                        </ul>
+
+                        <h2>4. Local Storage</h2>
+                        <p>
+                            In addition to cookies, PersonalitySpark uses browser local storage to:
+                        </p>
+                        <ul>
+                            <li>Save your personality quiz results on your device</li>
+                            <li>Remember your preferences and settings</li>
+                            <li>Cache content for faster loading</li>
+                            <li>Store temporary data during quiz sessions</li>
+                        </ul>
+                        <p>
+                            <strong>Note:</strong> Local storage data remains on your device and is not transmitted to our servers unless you explicitly choose to share results.
+                        </p>
+
+                        <h2>5. Managing Your Cookie Preferences</h2>
+                        
+                        <h3>Browser Controls</h3>
+                        <p>You can control cookies through your browser settings:</p>
+                        <ul>
+                            <li><strong>Chrome:</strong> Settings > Privacy and Security > Cookies and other site data</li>
+                            <li><strong>Firefox:</strong> Preferences > Privacy & Security > Cookies and Site Data</li>
+                            <li><strong>Safari:</strong> Preferences > Privacy > Cookies and website data</li>
+                            <li><strong>Edge:</strong> Settings > Site permissions > Cookies and stored data</li>
+                        </ul>
+
+                        <h3>PersonalitySpark Controls</h3>
+                        <ul>
+                            <li><strong>Analytics Opt-out:</strong> Disable analytics cookies through our settings (coming soon)</li>
+                            <li><strong>Local Storage:</strong> Clear stored quiz results anytime from your browser</li>
+                            <li><strong>Theme Preferences:</strong> Stored only on your device, can be reset</li>
+                        </ul>
+
+                        <h2>6. Cookie Lifespan</h2>
+                        <p>Different cookies have different lifespans:</p>
+                        <ul>
+                            <li><strong>Session Cookies:</strong> Deleted when you close your browser</li>
+                            <li><strong>Preference Cookies:</strong> Stored for up to 1 year</li>
+                            <li><strong>Analytics Cookies:</strong> Stored for up to 2 years</li>
+                            <li><strong>Local Storage:</strong> Persists until you clear it manually</li>
+                        </ul>
+
+                        <h2>7. Cookies We Use</h2>
+                        <table class="cookie-table">
+                            <thead>
+                                <tr>
+                                    <th>Cookie Name</th>
+                                    <th>Purpose</th>
+                                    <th>Type</th>
+                                    <th>Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ps_theme</td>
+                                    <td>Remember theme preference</td>
+                                    <td>Essential</td>
+                                    <td>1 year</td>
+                                </tr>
+                                <tr>
+                                    <td>ps_session</td>
+                                    <td>Maintain quiz session</td>
+                                    <td>Essential</td>
+                                    <td>Session</td>
+                                </tr>
+                                <tr>
+                                    <td>ps_analytics</td>
+                                    <td>Anonymous usage tracking</td>
+                                    <td>Analytics</td>
+                                    <td>2 years</td>
+                                </tr>
+                                <tr>
+                                    <td>_ga</td>
+                                    <td>Google Analytics (if enabled)</td>
+                                    <td>Analytics</td>
+                                    <td>2 years</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>8. Impact of Disabling Cookies</h2>
+                        <p>
+                            If you disable cookies, some features may not work properly:
+                        </p>
+                        <ul>
+                            <li><strong>Essential Cookies:</strong> Site may not function correctly</li>
+                            <li><strong>Preference Cookies:</strong> Settings will reset each visit</li>
+                            <li><strong>Analytics Cookies:</strong> No impact on functionality</li>
+                        </ul>
+
+                        <h2>9. Updates to Cookie Policy</h2>
+                        <p>
+                            We may update this Cookie Policy to reflect changes in our practices or applicable laws. We will notify you of significant changes by:
+                        </p>
+                        <ul>
+                            <li>Updating the "Last updated" date</li>
+                            <li>Posting a notice on our website</li>
+                            <li>Requesting renewed consent if required</li>
+                        </ul>
+
+                        <h2>10. Contact Us</h2>
+                        <p>
+                            If you have questions about our use of cookies, please contact us:
+                        </p>
+                        <div class="contact-info">
+                            <p><strong>Email:</strong> privacy@personalityspark.com</p>
+                            <p><strong>Support:</strong> support@personalityspark.com</p>
+                        </div>
+
+                        <div class="legal-footer">
+                            <p><strong>Effective Date:</strong> January 18, 2025</p>
+                            <p>This Cookie Policy explains how PersonalitySpark uses cookies and similar technologies.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Disclaimer Page -->
+        <div class="page" id="disclaimer-page">
+            <section class="page-hero">
+                <div class="container">
+                    <h1 class="page-title">Disclaimer</h1>
+                    <p class="page-description">
+                        Important information about the use and limitations of PersonalitySpark assessments.
+                    </p>
+                    <p class="last-updated">Last updated: January 18, 2025</p>
+                </div>
+            </section>
+            
+            <section class="legal-content">
+                <div class="container">
+                    <div class="legal-text">
+                        <h2>1. General Disclaimer</h2>
+                        <p>
+                            PersonalitySpark provides personality assessments and insights for entertainment, educational, and self-reflection purposes only. The information and results provided by our platform should not be considered as professional advice, medical diagnosis, or definitive personality evaluations.
+                        </p>
+
+                        <h2>2. Not Professional Assessment</h2>
+                        <p>
+                            PersonalitySpark assessments are NOT intended to replace professional psychological evaluation, therapy, or counseling. Our quizzes and results:
+                        </p>
+                        <ul>
+                            <li>Are not diagnostic tools for mental health conditions</li>
+                            <li>Should not be used for clinical or therapeutic purposes</li>
+                            <li>Cannot substitute for professional psychological consultation</li>
+                            <li>Are not validated for employment screening or hiring decisions</li>
+                            <li>Should not be used for relationship counseling or therapy</li>
+                        </ul>
+
+                        <h2>3. Accuracy and Reliability</h2>
+                        <p>
+                            While PersonalitySpark strives to provide accurate and meaningful insights:
+                        </p>
+                        <ul>
+                            <li><strong>Subjective Nature:</strong> Personality assessment is inherently subjective and can vary based on mood, context, and life circumstances</li>
+                            <li><strong>AI Limitations:</strong> Our AI-generated questions and insights may occasionally be inaccurate or inappropriate</li>
+                            <li><strong>Self-Reporting Bias:</strong> Results depend on honest and accurate self-reporting</li>
+                            <li><strong>Cultural Factors:</strong> Assessments may not account for all cultural and individual differences</li>
+                            <li><strong>Temporal Variability:</strong> Personality traits can evolve over time</li>
+                        </ul>
+
+                        <h2>4. Educational Purpose</h2>
+                        <p>
+                            PersonalitySpark is designed as an educational tool to:
+                        </p>
+                        <ul>
+                            <li>Encourage self-reflection and personal awareness</li>
+                            <li>Provide insights into personality psychology concepts</li>
+                            <li>Offer entertainment through interactive assessments</li>
+                            <li>Facilitate conversations about personality and behavior</li>
+                            <li>Introduce users to established personality frameworks</li>
+                        </ul>
+
+                        <h2>5. No Warranties</h2>
+                        <p>
+                            PersonalitySpark provides the service "as is" without any warranties, expressed or implied. We specifically disclaim:
+                        </p>
+                        <ul>
+                            <li>Warranties of merchantability or fitness for a particular purpose</li>
+                            <li>Accuracy, completeness, or reliability of assessment results</li>
+                            <li>Uninterrupted or error-free operation of the service</li>
+                            <li>Security against data loss or unauthorized access</li>
+                            <li>Compatibility with all devices and browsers</li>
+                        </ul>
+
+                        <h2>6. Limitation of Liability</h2>
+                        <p>
+                            To the fullest extent permitted by law, PersonalitySpark shall not be liable for:
+                        </p>
+                        <ul>
+                            <li>Any decisions made based on assessment results</li>
+                            <li>Emotional distress or psychological harm resulting from use</li>
+                            <li>Damages arising from reliance on provided information</li>
+                            <li>Loss of data, privacy breaches, or technical failures</li>
+                            <li>Indirect, incidental, or consequential damages</li>
+                            <li>Any damages exceeding the amount paid for the service (which is $0)</li>
+                        </ul>
+
+                        <h2>7. User Responsibility</h2>
+                        <p>
+                            Users of PersonalitySpark are responsible for:
+                        </p>
+                        <ul>
+                            <li>Using the service appropriately and within its intended scope</li>
+                            <li>Seeking professional help for serious psychological concerns</li>
+                            <li>Not making major life decisions based solely on quiz results</li>
+                            <li>Understanding the limitations of online personality assessments</li>
+                            <li>Protecting their own privacy and personal information</li>
+                        </ul>
+
+                        <h2>8. Third-Party Content</h2>
+                        <p>
+                            PersonalitySpark may include links to external websites or reference third-party research:
+                        </p>
+                        <ul>
+                            <li>We are not responsible for the content or practices of linked sites</li>
+                            <li>Third-party research is referenced for educational purposes only</li>
+                            <li>External links do not constitute endorsement</li>
+                            <li>Users access third-party content at their own risk</li>
+                        </ul>
+
+                        <h2>9. Age and Capacity</h2>
+                        <p>
+                            PersonalitySpark is intended for users who:
+                        </p>
+                        <ul>
+                            <li>Are at least 13 years of age</li>
+                            <li>Have the legal capacity to agree to these terms</li>
+                            <li>Can understand the limitations and purpose of the assessments</li>
+                            <li>Are not using the service under duress or coercion</li>
+                        </ul>
+
+                        <h2>10. Specific Use Cases</h2>
+                        
+                        <h3>Employment and Hiring</h3>
+                        <p>
+                            PersonalitySpark assessments should NOT be used for:
+                        </p>
+                        <ul>
+                            <li>Employment screening or hiring decisions</li>
+                            <li>Performance evaluations</li>
+                            <li>Promotion or demotion determinations</li>
+                            <li>Team assignment or role placement</li>
+                        </ul>
+
+                        <h3>Relationships and Dating</h3>
+                        <p>
+                            Our assessments should NOT be used as:
+                        </p>
+                        <ul>
+                            <li>The sole basis for relationship decisions</li>
+                            <li>Compatibility matching tools</li>
+                            <li>Relationship counseling resources</li>
+                            <li>Predictors of relationship success</li>
+                        </ul>
+
+                        <h3>Medical and Mental Health</h3>
+                        <p>
+                            PersonalitySpark cannot and should not:
+                        </p>
+                        <ul>
+                            <li>Diagnose mental health conditions</li>
+                            <li>Replace therapy or counseling</li>
+                            <li>Provide treatment recommendations</li>
+                            <li>Assess psychological fitness or stability</li>
+                        </ul>
+
+                        <h2>11. When to Seek Professional Help</h2>
+                        <p>
+                            Please consult qualified professionals if you:
+                        </p>
+                        <ul>
+                            <li>Are experiencing mental health concerns</li>
+                            <li>Need psychological evaluation for legal or medical purposes</li>
+                            <li>Require relationship or family counseling</li>
+                            <li>Are making significant life or career decisions</li>
+                            <li>Have questions about personality disorders or mental health</li>
+                        </ul>
+
+                        <h2>12. Contact Information</h2>
+                        <p>
+                            If you have questions about this disclaimer or concerns about the service:
+                        </p>
+                        <div class="contact-info">
+                            <p><strong>General Support:</strong> support@personalityspark.com</p>
+                            <p><strong>Legal Questions:</strong> legal@personalityspark.com</p>
+                        </div>
+
+                        <div class="legal-footer">
+                            <p><strong>Effective Date:</strong> January 18, 2025</p>
+                            <p>This disclaimer explains the limitations and appropriate use of PersonalitySpark assessments. Please read carefully before using our service.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <span class="brand-icon">✨</span>
+                        <span class="brand-text">PersonalitySpark</span>
+                    </div>
+                    <p class="footer-description">
+                        Discover your true personality with AI-powered quizzes. 
+                        Fun, insightful, and always free.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📸</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-page="home">Home</a></li>
+                        <li><a href="#quizzes" data-page="quizzes">Quizzes</a></li>
+                        <li><a href="#about" data-page="about">About</a></li>
+                        <li><a href="#contact" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Popular Quizzes</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-quiz="big5">Big 5 Personality</a></li>
+                        <li><a href="#" data-quiz="daily">Daily Challenge</a></li>
+                        <li><a href="#" data-quiz="quick">Quick Assessment</a></li>
+                        <li><a href="#" data-quiz="career">Career Match</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy" data-page="privacy">Privacy Policy</a></li>
+                        <li><a href="#terms" data-page="terms">Terms of Service</a></li>
+                        <li><a href="#cookies" data-page="cookies">Cookie Policy</a></li>
+                        <li><a href="#disclaimer" data-page="disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 PersonalitySpark. All rights reserved.</p>
+                <p>Made with ❤️ for personality enthusiasts worldwide</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Share Modal -->
+    <div id="share-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Share Your Results</h2>
+                <button class="modal-close" id="share-modal-close">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="share-preview" id="share-preview">
+                    <!-- Share preview will be generated here -->
+                </div>
+                <div class="share-options">
+                    <button class="share-btn" data-platform="twitter">🐦 Twitter</button>
+                    <button class="share-btn" data-platform="facebook">📘 Facebook</button>
+                    <button class="share-btn" data-platform="linkedin">💼 LinkedIn</button>
+                    <button class="share-btn" data-platform="copy">📋 Copy Link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/utils/helpers.js"></script>
+    <script src="./js/utils/storage.js"></script>
+    <script src="./js/services/api.js"></script>
+    <script src="./js/services/analytics.js"></script>
+    <script src="./js/components/navigation.js"></script>
+    <script src="./js/components/quiz.js"></script>
+    <script src="./js/components/results.js"></script>
+    <script src="./js/components/share.js"></script>
+    <script src="./js/app.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
