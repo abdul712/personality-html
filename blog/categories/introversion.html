@@ -3,149 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introversion & Personality Types - PersonalitySpark Blog</title>
-    <meta name="description" content="Explore the world of introversion, personality types, MBTI insights, and tips for thriving as an introvert in an extroverted world.">
-    <meta name="keywords" content="introversion, introvert, personality types, MBTI, quiet strength, social energy, solitude">
+    <title>PersonalitySpark Blog - Insights on Personality, Twin Flames & Self-Discovery</title>
+    <meta name="description" content="Explore deep insights on personality types, twin flame connections, spiritual growth, and self-discovery. Expert articles on introversion, relationships, and personal development.">
+    <meta name="keywords" content="personality blog, twin flame, introversion, spiritual growth, self-discovery, relationships, personal development">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Introversion & Personality Types - PersonalitySpark Blog">
-    <meta property="og:description" content="Explore the world of introversion, personality types, MBTI insights, and tips for thriving as an introvert">
+    <meta property="og:title" content="PersonalitySpark Blog - Personality & Spiritual Insights">
+    <meta property="og:description" content="Discover expert insights on personality types, twin flames, and spiritual growth">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://personalityspark.com/blog/categories/introversion.html">
-    <meta property="og:image" content="https://personalityspark.com/blog/assets/images/introversion-category.jpg">
+    <meta property="og:url" content="https://personalityspark.com/blog/">
+    <meta property="og:image" content="https://personalityspark.com/assets/icons/icon-512.png">
     
-    <link rel="stylesheet" href="../../css/main.css">
-    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
-    <link rel="canonical" href="https://personalityspark.com/blog/categories/introversion.html">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="canonical" href="https://personalityspark.com/blog/">
     
     <style>
-        .category-header {
-            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
-            padding: var(--spacing-12) var(--spacing-6);
+        .blog-hero {
+            background: linear-gradient(135deg, var(--primary-50) 0%, var(--secondary-50) 100%);
+            padding: var(--spacing-16) var(--spacing-6);
             text-align: center;
-            color: white;
-            margin-bottom: var(--spacing-8);
+            margin-bottom: var(--spacing-12);
         }
         
-        .category-icon {
-            font-size: 4rem;
-            margin-bottom: var(--spacing-4);
-        }
-        
-        .category-title {
+        .blog-hero h1 {
             font-size: 3rem;
             font-weight: 800;
+            color: var(--primary-600);
             margin-bottom: var(--spacing-4);
-            line-height: 1.2;
         }
         
-        .category-description {
+        .blog-hero p {
             font-size: var(--font-size-lg);
-            max-width: 800px;
+            color: var(--text-secondary);
+            max-width: 600px;
             margin: 0 auto;
-            line-height: 1.6;
-            opacity: 0.95;
         }
         
-        .category-stats {
-            display: flex;
-            justify-content: center;
-            gap: var(--spacing-6);
-            margin-top: var(--spacing-6);
-            flex-wrap: wrap;
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: var(--font-size-xl);
-            font-weight: 700;
-            margin-bottom: var(--spacing-1);
-        }
-        
-        .stat-label {
-            font-size: var(--font-size-sm);
-            opacity: 0.9;
-        }
-        
-        .articles-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-6);
-        }
-        
-        .filter-section {
-            background: var(--bg-secondary);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-6);
-            margin-bottom: var(--spacing-8);
-        }
-        
-        .filter-title {
-            font-size: var(--font-size-lg);
-            font-weight: 600;
-            margin-bottom: var(--spacing-4);
-            color: var(--text-primary);
-        }
-        
-        .filter-tags {
-            display: flex;
-            gap: var(--spacing-2);
-            flex-wrap: wrap;
-        }
-        
-        .filter-tag {
-            background: var(--primary-100);
-            color: var(--primary-700);
-            padding: var(--spacing-2) var(--spacing-3);
-            border-radius: var(--radius-full);
-            font-size: var(--font-size-sm);
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-        }
-        
-        .filter-tag:hover,
-        .filter-tag.active {
-            background: var(--primary-600);
-            color: white;
-        }
-        
-        .articles-grid {
+        .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: var(--spacing-6);
-            margin-bottom: var(--spacing-8);
+            margin-bottom: var(--spacing-12);
         }
         
-        .article-card {
-            background: var(--bg-primary);
+        .category-card {
+            background: var(--bg-secondary);
             border-radius: var(--radius-lg);
             padding: var(--spacing-6);
             border: 1px solid var(--gray-200);
             transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
+            cursor: pointer;
         }
         
-        .article-card:hover {
+        .category-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-300);
         }
         
-        .article-meta {
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .category-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-2);
+        }
+        
+        .category-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .category-count {
+            font-size: var(--font-size-sm);
+            color: var(--primary-600);
+            font-weight: 500;
+        }
+        
+        .featured-posts {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-8);
+            margin-bottom: var(--spacing-12);
+        }
+        
+        .featured-posts h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-6);
+            text-align: center;
+        }
+        
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-6);
+        }
+        
+        .post-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-5);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .post-meta {
             display: flex;
             align-items: center;
-            gap: var(--spacing-3);
+            gap: var(--spacing-2);
             margin-bottom: var(--spacing-3);
             font-size: var(--font-size-sm);
             color: var(--text-secondary);
         }
         
-        .article-title {
+        .post-category-tag {
+            background: var(--primary-100);
+            color: var(--primary-700);
+            padding: var(--spacing-1) var(--spacing-2);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+        }
+        
+        .post-title {
             font-size: var(--font-size-lg);
             font-weight: 600;
             color: var(--text-primary);
@@ -153,42 +145,117 @@
             line-height: 1.4;
         }
         
-        .article-excerpt {
+        .post-excerpt {
             color: var(--text-secondary);
             line-height: 1.6;
             margin-bottom: var(--spacing-4);
         }
         
-        .article-tags {
-            display: flex;
-            gap: var(--spacing-2);
-            flex-wrap: wrap;
-        }
-        
-        .article-tag {
-            background: var(--primary-50);
+        .read-more {
             color: var(--primary-600);
-            padding: var(--spacing-1) var(--spacing-2);
-            border-radius: var(--radius-md);
-            font-size: var(--font-size-xs);
             font-weight: 500;
-        }
-        
-        .breadcrumb {
-            padding: var(--spacing-4) var(--spacing-6);
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--gray-200);
-        }
-        
-        .breadcrumb a {
-            color: var(--primary-600);
             text-decoration: none;
-            font-size: var(--font-size-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-1);
         }
         
-        .breadcrumb span {
+        .read-more:hover {
+            color: var(--primary-700);
+        }
+        
+        .search-section {
+            text-align: center;
+            margin-bottom: var(--spacing-12);
+        }
+        
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: var(--spacing-3) var(--spacing-4);
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-500);
+        }
+        
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-4);
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .stat-card {
+            background: var(--bg-secondary);
+            padding: var(--spacing-4);
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-600);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: var(--font-size-sm);
             color: var(--text-secondary);
-            margin: 0 var(--spacing-2);
+            margin-top: var(--spacing-1);
+        }
+        
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Dark theme overrides */
+        [data-theme="dark"] .category-card {
+            background: var(--bg-accent);
+            border-color: var(--gray-600);
+        }
+        
+        [data-theme="dark"] .featured-posts {
+            background: var(--bg-accent);
+        }
+        
+        [data-theme="dark"] .post-card {
+            background: var(--bg-secondary);
+            border-color: var(--gray-600);
+        }
+        
+        [data-theme="dark"] .search-input {
+            background: var(--bg-secondary);
+            border-color: var(--gray-600);
+            color: var(--text-primary);
+        }
+        
+        [data-theme="dark"] .stat-card {
+            background: var(--bg-accent);
+            border-color: var(--gray-600);
         }
     </style>
 </head>
@@ -196,15 +263,15 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../../" class="nav-logo">
+            <a href="../" class="nav-logo">
                 <span class="logo-icon">✨</span>
                 PersonalitySpark
             </a>
             <div class="nav-links">
-                <a href="../../#home" class="nav-link">Home</a>
-                <a href="../../#quizzes" class="nav-link">Quizzes</a>
-                <a href="../index.html" class="nav-link active">Blog</a>
-                <a href="../../#about" class="nav-link">About</a>
+                <a href="../#home" class="nav-link">Home</a>
+                <a href="../#quizzes" class="nav-link">Quizzes</a>
+                <a href="/blog" class="nav-link active">Blog</a>
+                <a href="../#about" class="nav-link">About</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                     <span class="theme-icon">🌙</span>
                 </button>
@@ -217,60 +284,124 @@
         </div>
     </nav>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <a href="../../">Home</a>
-        <span>/</span>
-        <a href="../index.html">Blog</a>
-        <span>/</span>
-        <span style="color: var(--text-secondary);">Introversion & Personality Types</span>
-    </div>
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>PersonalitySpark Blog</h1>
+            <p>Discover deep insights on personality types, twin flame connections, spiritual growth, and the fascinating world of human psychology. Your journey to self-discovery starts here.</p>
+        </div>
+    </section>
 
-    <!-- Category Header -->
-    <header class="category-header">
-        <div class="category-icon">🤫</div>
-        <h1 class="category-title">Introversion & Personality Types</h1>
-        <p class="category-description">
-            Embrace your quiet strength. Discover insights into introversion, personality types, MBTI wisdom, and practical tips for thriving as an introvert in an extroverted world.
-        </p>
-        <div class="category-stats">
-            <div class="stat-item">
-                <div class="stat-number" id="articleCount">0</div>
-                <div class="stat-label">Articles</div>
+    <!-- Stats Section -->
+    <section class="container stats-section">
+        <div class="stat-card">
+            <span class="stat-number">2,500+</span>
+            <span class="stat-label">Expert Articles</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">6</span>
+            <span class="stat-label">Categories</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">100K+</span>
+            <span class="stat-label">Monthly Readers</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">Daily</span>
+            <span class="stat-label">New Content</span>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="container search-section">
+        <h2 style="margin-bottom: var(--spacing-4); color: var(--text-primary);">Find Your Perfect Article</h2>
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Search for personality insights, twin flames, relationships..." id="blogSearch">
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-8); color: var(--text-primary); font-size: var(--font-size-2xl);">Explore Our Categories</h2>
+        <div class="categories-grid">
+            <div class="category-card" onclick="window.location.href='categories/twin-flames.html'">
+                <div class="category-icon">💫</div>
+                <h3 class="category-title">Twin Flames & Spiritual Connections</h3>
+                <p class="category-description">Explore the mystical world of twin flame relationships, separation, reunion, and spiritual awakening.</p>
+                <span class="category-count">1,200+ Articles</span>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">~6</div>
-                <div class="stat-label">Min Read</div>
+            
+            <div class="category-card" onclick="window.location.href='categories/introversion.html'">
+                <div class="category-icon">🤫</div>
+                <h3 class="category-title">Introversion & Personality Types</h3>
+                <p class="category-description">Deep insights into introversion, personality traits, and understanding different personality types.</p>
+                <span class="category-count">800+ Articles</span>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">∞</div>
-                <div class="stat-label">Insights</div>
+            
+            <div class="category-card" onclick="window.location.href='categories/angel-numbers.html'">
+                <div class="category-icon">🔢</div>
+                <h3 class="category-title">Angel Numbers & Spirituality</h3>
+                <p class="category-description">Decode the meanings behind angel numbers and their spiritual significance in your life.</p>
+                <span class="category-count">300+ Articles</span>
+            </div>
+            
+            <div class="category-card" onclick="window.location.href='categories/relationships.html'">
+                <div class="category-icon">💕</div>
+                <h3 class="category-title">Relationships & Love</h3>
+                <p class="category-description">Navigate the complexities of relationships, dating, and finding meaningful connections.</p>
+                <span class="category-count">150+ Articles</span>
+            </div>
+            
+            <div class="category-card" onclick="window.location.href='categories/self-discovery.html'">
+                <div class="category-icon">🌱</div>
+                <h3 class="category-title">Self-Discovery & Growth</h3>
+                <p class="category-description">Embark on a journey of personal growth, self-awareness, and discovering your true potential.</p>
+                <span class="category-count">200+ Articles</span>
+            </div>
+            
+            <div class="category-card" onclick="window.location.href='categories/psychology.html'">
+                <div class="category-icon">🧠</div>
+                <h3 class="category-title">Psychology & Mental Health</h3>
+                <p class="category-description">Understand the human mind, emotions, and strategies for maintaining mental wellness.</p>
+                <span class="category-count">100+ Articles</span>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Articles Container -->
-    <main class="articles-container">
-        <!-- Filter Section -->
-        <div class="filter-section">
-            <h3 class="filter-title">Explore Topics</h3>
-            <div class="filter-tags">
-                <button class="filter-tag active" data-filter="all">All Articles</button>
-                <button class="filter-tag" data-filter="mbti">MBTI Types</button>
-                <button class="filter-tag" data-filter="social">Social Skills</button>
-                <button class="filter-tag" data-filter="career">Career Advice</button>
-                <button class="filter-tag" data-filter="relationships">Relationships</button>
-                <button class="filter-tag" data-filter="self-care">Self-Care</button>
-                <button class="filter-tag" data-filter="misconceptions">Myths & Facts</button>
-                <button class="filter-tag" data-filter="strengths">Strengths</button>
+    <!-- Featured Posts Section -->
+    <section class="container featured-posts">
+        <h2>Featured Articles</h2>
+        <div class="posts-grid" id="postsGrid">
+            <!-- Posts will be loaded dynamically -->
+        </div>
+    </section>
+
+    <script src="js/article-registry.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const articleRegistry = new ArticleRegistry();
+            const postsGrid = document.getElementById('postsGrid');
+
+            const articles = articleRegistry.getArticlesByCategory('introversion');
+
+            articles.forEach(article => {
+                const articleCard = articleRegistry.generateArticleCard(article);
+                postsGrid.innerHTML += articleCard;
+            });
+        });
+    </script>
+
+    <!-- Newsletter Signup -->
+    <section class="container" style="text-align: center; padding: var(--spacing-12) 0;">
+        <div style="background: var(--bg-secondary); padding: var(--spacing-8); border-radius: var(--radius-lg); max-width: 600px; margin: 0 auto;">
+            <h3 style="color: var(--text-primary); margin-bottom: var(--spacing-4);">Stay Updated</h3>
+            <p style="color: var(--text-secondary); margin-bottom: var(--spacing-6);">Get the latest insights on personality, spirituality, and self-discovery delivered to your inbox.</p>
+            <div style="display: flex; gap: var(--spacing-3); flex-wrap: wrap; justify-content: center;">
+                <input type="email" placeholder="Enter your email" style="flex: 1; min-width: 250px; padding: var(--spacing-3); border: 1px solid var(--gray-300); border-radius: var(--radius-md); background: var(--bg-primary); color: var(--text-primary);">
+                <button class="btn btn-primary">Subscribe</button>
             </div>
         </div>
-
-        <!-- Articles Grid -->
-        <div class="articles-grid" id="articlesGrid">
-            <!-- Articles will be populated by JavaScript from article registry -->
-        </div>
-    </main>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -283,111 +414,47 @@
                 <div class="footer-section">
                     <h4>Categories</h4>
                     <ul class="footer-links">
-                        <li><a href="twin-flames.html">Twin Flames</a></li>
-                        <li><a href="introversion.html">Introversion</a></li>
-                        <li><a href="angel-numbers.html">Angel Numbers</a></li>
-                        <li><a href="relationships.html">Relationships</a></li>
+                        <li><a href="categories/twin-flames.html">Twin Flames</a></li>
+                        <li><a href="categories/introversion.html">Introversion</a></li>
+                        <li><a href="categories/angel-numbers.html">Angel Numbers</a></li>
+                        <li><a href="categories/relationships.html">Relationships</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="../../#home">Home</a></li>
-                        <li><a href="../../#quizzes">Personality Tests</a></li>
-                        <li><a href="../../#about">About</a></li>
-                        <li><a href="../../#contact">Contact</a></li>
+                        <li><a href="../#home">Home</a></li>
+                        <li><a href="../#quizzes">Personality Tests</a></li>
+                        <li><a href="../#about">About</a></li>
+                        <li><a href="../#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 PersonalitySpark. All rights reserved. | <a href="../../privacy.html">Privacy Policy</a> | <a href="../../terms.html">Terms of Service</a></p>
+                <p>&copy; 2025 PersonalitySpark. All rights reserved. | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Service</a></p>
             </div>
         </div>
     </footer>
 
-    <script src="../../js/app.js"></script>
-    <script src="../js/article-registry.js"></script>
+    <script src="../js/app.js"></script>
     <script>
-        // Initialize article registry
-        const registry = new ArticleRegistry();
-        const currentCategory = 'introversion';
-        
-        // DOM elements
-        const articlesGrid = document.getElementById('articlesGrid');
-        const filterTags = document.querySelectorAll('.filter-tag');
-        const articleCount = document.getElementById('articleCount');
+        // Blog search functionality
+        document.getElementById('blogSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            // Implement search functionality here
+            console.log('Searching for:', searchTerm);
+        });
 
-        // Current state
-        let currentFilter = 'all';
-        let displayedArticles = [];
-        let allCategoryArticles = [];
-
-        // Initialize page
-        function initializePage() {
-            // Get all articles for this category
-            allCategoryArticles = registry.getArticlesByCategory(currentCategory);
-            
-            // Display all articles initially
-            displayArticles(allCategoryArticles);
-            
-            // Update stats
-            updateStats();
-            
-            // Setup event listeners
-            setupEventListeners();
-        }
-
-        function displayArticles(articles) {
-            displayedArticles = articles;
-            
-            if (articles.length === 0) {
-                articlesGrid.innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: var(--spacing-8);">
-                        <h3>No articles found for this filter.</h3>
-                        <p>Try selecting a different topic or check back soon for new content!</p>
-                    </div>
-                `;
-                return;
-            }
-
-            articlesGrid.innerHTML = articles.map(article => 
-                registry.generateArticleCard(article)
-            ).join('');
-
-            // Update article count
-            articleCount.textContent = articles.length;
-        }
-
-        function updateStats() {
-            const stats = registry.getArticleStats(currentCategory);
-            articleCount.textContent = stats.count;
-        }
-
-        function setupEventListeners() {
-            // Filter functionality
-            filterTags.forEach(tag => {
-                tag.addEventListener('click', () => {
-                    // Remove active class from all tags
-                    filterTags.forEach(t => t.classList.remove('active'));
-                    // Add active class to clicked tag
-                    tag.classList.add('active');
-
-                    const filter = tag.dataset.filter;
-                    currentFilter = filter;
-
-                    let filteredArticles;
-                    if (filter === 'all') {
-                        filteredArticles = allCategoryArticles;
-                    } else {
-                        filteredArticles = registry.getArticlesByTag(filter).filter(
-                            article => article.category === currentCategory
-                        );
-                    }
-
-                    displayArticles(filteredArticles);
-                });
+        // Category card click effects
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
             });
-        }
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-4px)';
+            });
+        });
 
         // Initialize theme
         const savedTheme = localStorage.getItem('personality-spark-theme') || 'light';
@@ -395,15 +462,8 @@
         
         // Update theme toggle icon
         const themeToggle = document.getElementById('themeToggle');
-        if (themeToggle) {
-            const themeIcon = themeToggle.querySelector('.theme-icon');
-            if (themeIcon) {
-                themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-            }
-        }
-
-        // Initialize page when DOM is loaded
-        document.addEventListener('DOMContentLoaded', initializePage);
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
     </script>
 </body>
 </html>

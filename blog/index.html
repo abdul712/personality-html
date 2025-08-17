@@ -371,8 +371,8 @@
     <!-- Featured Posts Section -->
     <section class="container featured-posts">
         <h2>Featured Articles</h2>
-        <div class="posts-grid" id="featuredPosts">
-            <!-- Featured posts will be loaded dynamically -->
+        <div class="posts-grid" id="postsGrid">
+            <!-- Posts will be loaded dynamically -->
         </div>
     </section>
 
@@ -380,13 +380,13 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const articleRegistry = new ArticleRegistry();
-            const featuredPostsContainer = document.getElementById('featuredPosts');
+            const postsGrid = document.getElementById('postsGrid');
 
-            const articles = articleRegistry.getFeaturedArticles();
+            const articles = articleRegistry.articles;
 
             articles.forEach(article => {
                 const articleCard = articleRegistry.generateArticleCard(article);
-                featuredPostsContainer.innerHTML += articleCard;
+                postsGrid.innerHTML += articleCard;
             });
         });
     </script>
