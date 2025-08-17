@@ -391,7 +391,131 @@
     </footer>
 
     <script src="../../js/app.js"></script>
-    <script src="../js/article-registry.js"></script>
+    <script>
+        // Embedded ArticleRegistry Class (workaround for deployment issue)
+        class ArticleRegistry {
+            constructor() {
+                this.articles = [];
+                this.categories = {
+                    'twin-flames': {
+                        name: 'Twin Flames & Spiritual Connections',
+                        icon: '💫',
+                        keywords: ['twin-flame', 'twin flame', 'runner', 'chaser', 'separation', 'reunion', 'spiritual-connection'],
+                        tags: ['separation', 'reunion', 'runner', 'chaser', 'signs', 'love', 'healing', 'awakening']
+                    }
+                };
+                this.initializeArticles();
+            }
+
+            initializeArticles() {
+                this.articles = [
+                    {
+                        title: "10 Signs Your Twin Flame Separation Is Coming to an End",
+                        filename: "10-signs-twin-flame-separation-ending.html",
+                        category: "twin-flames",
+                        excerpt: "Discover the profound indicators that signal your twin flame separation phase may be nearing its conclusion and prepare for the beautiful reunion ahead.",
+                        readTime: "5 min",
+                        date: "2025-08-17",
+                        tags: ["separation", "signs", "reunion"],
+                        featured: true
+                    },
+                    {
+                        title: "10 Signs of Twin Flame Love",
+                        filename: "10-signs-of-twin-flame-love.html",
+                        category: "twin-flames",
+                        excerpt: "Explore the unique characteristics of twin flame love and spiritual connection that transcend ordinary relationships.",
+                        readTime: "6 min",
+                        date: "2025-08-17",
+                        tags: ["love", "signs", "spiritual"]
+                    },
+                    {
+                        title: "10 Common Twin Flame Runner Fears",
+                        filename: "10-common-twin-flame-runner-fears.html",
+                        category: "twin-flames",
+                        excerpt: "Understanding the fears that cause twin flame runners and explore paths to healing and reunion.",
+                        readTime: "7 min",
+                        date: "2025-08-17",
+                        tags: ["runner", "fears", "healing"]
+                    },
+                    {
+                        title: "12 Signs You've Met Your Twin Flame",
+                        filename: "12-signs-youve-met-your-twin-flame.html",
+                        category: "twin-flames",
+                        excerpt: "Discover the 12 definitive signs that indicate you've encountered your mirror soul and begun this transformative spiritual journey.",
+                        readTime: "6 min",
+                        date: "2025-08-17",
+                        tags: ["signs", "recognition", "spiritual"]
+                    },
+                    {
+                        title: "10 Common Twin Flame Separation Feelings",
+                        filename: "10-common-twin-flame-separation-feelings.html",
+                        category: "twin-flames",
+                        excerpt: "Learn to understand and manage the complex emotions experienced during twin flame separation with practical coping strategies.",
+                        readTime: "8 min",
+                        date: "2025-08-17",
+                        tags: ["separation", "feelings", "healing"]
+                    },
+                    {
+                        title: "10 Deep Twin Flame Runner Feelings",
+                        filename: "10-deep-twin-flame-runner-feelings.html",
+                        category: "twin-flames",
+                        excerpt: "Deep psychological exploration of twin flame runner emotions and the healing journey toward reunion.",
+                        readTime: "7 min",
+                        date: "2025-08-17",
+                        tags: ["runner", "feelings", "psychology"]
+                    }
+                ];
+            }
+
+            getArticlesByCategory(categoryKey) {
+                return this.articles.filter(article => article.category === categoryKey);
+            }
+
+            getArticlesByTag(tag) {
+                return this.articles.filter(article => article.tags.includes(tag));
+            }
+
+            getArticleStats(categoryKey) {
+                const categoryArticles = this.getArticlesByCategory(categoryKey);
+                return {
+                    count: categoryArticles.length,
+                    avgReadTime: Math.round(
+                        categoryArticles.reduce((sum, article) => 
+                            sum + parseInt(article.readTime), 0) / categoryArticles.length
+                    )
+                };
+            }
+
+            generateArticleCard(article) {
+                const tagsHtml = article.tags.map(tag => 
+                    `<span class="article-tag">${tag.charAt(0).toUpperCase() + tag.slice(1).replace('-', ' ')}</span>`
+                ).join('');
+
+                return `
+                    <a href="../posts/${article.filename}" class="article-card" data-tags="${article.tags.join(',')}">
+                        <div class="article-meta">
+                            <span>📅 ${this.formatDate(article.date)}</span>
+                            <span>📖 ${article.readTime} read</span>
+                        </div>
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <div class="article-tags">
+                            ${tagsHtml}
+                        </div>
+                    </a>
+                `;
+            }
+
+            formatDate(dateString) {
+                const date = new Date(dateString);
+                return date.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'short', 
+                    day: 'numeric' 
+                });
+            }
+        }
+    </script>
     <script>
         // Initialize article registry
         const registry = new ArticleRegistry();
