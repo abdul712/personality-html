@@ -268,7 +268,7 @@
 
         <!-- Articles Grid -->
         <div class="articles-grid" id="articlesGrid">
-            <!-- Articles will be populated by JavaScript -->
+            <!-- Articles will be populated by JavaScript from article registry -->
         </div>
     </main>
 
@@ -306,14 +306,104 @@
     </footer>
 
     <script src="../../js/app.js"></script>
+    <script src="../js/article-registry.js"></script>
     <script>
+        // Initialize article registry
+        const registry = new ArticleRegistry();
+        const currentCategory = 'introversion';
+        
+        // DOM elements
+        const articlesGrid = document.getElementById('articlesGrid');
+        const filterTags = document.querySelectorAll('.filter-tag');
+        const articleCount = document.getElementById('articleCount');
+
+        // Current state
+        let currentFilter = 'all';
+        let displayedArticles = [];
+        let allCategoryArticles = [];
+
+        // Initialize page
+        function initializePage() {
+            // Get all articles for this category
+            allCategoryArticles = registry.getArticlesByCategory(currentCategory);
+            
+            // Display all articles initially
+            displayArticles(allCategoryArticles);
+            
+            // Update stats
+            updateStats();
+            
+            // Setup event listeners
+            setupEventListeners();
+        }
+
+        function displayArticles(articles) {
+            displayedArticles = articles;
+            
+            if (articles.length === 0) {
+                articlesGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: var(--spacing-8);">
+                        <h3>No articles found for this filter.</h3>
+                        <p>Try selecting a different topic or check back soon for new content!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            articlesGrid.innerHTML = articles.map(article => 
+                registry.generateArticleCard(article)
+            ).join('');
+
+            // Update article count
+            articleCount.textContent = articles.length;
+        }
+
+        function updateStats() {
+            const stats = registry.getArticleStats(currentCategory);
+            articleCount.textContent = stats.count;
+        }
+
+        function setupEventListeners() {
+            // Filter functionality
+            filterTags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    // Remove active class from all tags
+                    filterTags.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tag
+                    tag.classList.add('active');
+
+                    const filter = tag.dataset.filter;
+                    currentFilter = filter;
+
+                    let filteredArticles;
+                    if (filter === 'all') {
+                        filteredArticles = allCategoryArticles;
+                    } else {
+                        filteredArticles = registry.getArticlesByTag(filter).filter(
+                            article => article.category === currentCategory
+                        );
+                    }
+
+                    displayArticles(filteredArticles);
+                });
+            });
+        }
+
         // Initialize theme
         const savedTheme = localStorage.getItem('personality-spark-theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
         
+        // Update theme toggle icon
         const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = themeToggle.querySelector('.theme-icon');
-        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        if (themeToggle) {
+            const themeIcon = themeToggle.querySelector('.theme-icon');
+            if (themeIcon) {
+                themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+
+        // Initialize page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initializePage);
     </script>
 </body>
 </html>

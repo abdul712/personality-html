@@ -40,10 +40,156 @@
             opacity: 0.95;
         }
         
+        .category-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-6);
+            margin-top: var(--spacing-6);
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-1);
+        }
+        
+        .stat-label {
+            font-size: var(--font-size-sm);
+            opacity: 0.9;
+        }
+        
         .articles-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 var(--spacing-6);
+        }
+        
+        .filter-section {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-6);
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .filter-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--spacing-4);
+            color: var(--text-primary);
+        }
+        
+        .filter-tags {
+            display: flex;
+            gap: var(--spacing-2);
+            flex-wrap: wrap;
+        }
+        
+        .filter-tag {
+            background: var(--primary-100);
+            color: var(--primary-700);
+            padding: var(--spacing-2) var(--spacing-3);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .filter-tag:hover,
+        .filter-tag.active {
+            background: var(--primary-600);
+            color: white;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--spacing-6);
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .article-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-6);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            margin-bottom: var(--spacing-3);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+        
+        .article-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-3);
+            line-height: 1.4;
+        }
+        
+        .article-excerpt {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .article-tags {
+            display: flex;
+            gap: var(--spacing-2);
+            flex-wrap: wrap;
+        }
+        
+        .article-tag {
+            background: var(--primary-50);
+            color: var(--primary-600);
+            padding: var(--spacing-1) var(--spacing-2);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .category-title {
+                font-size: 2rem;
+            }
+            
+            .category-stats {
+                flex-direction: column;
+                gap: var(--spacing-3);
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Dark theme overrides */
+        [data-theme="dark"] .filter-section {
+            background: var(--bg-accent);
+        }
+        
+        [data-theme="dark"] .article-card {
+            background: var(--bg-secondary);
+            border-color: var(--gray-600);
         }
         
         .breadcrumb {
@@ -102,11 +248,39 @@
         <p class="category-description">
             Explore the fascinating world of psychology and mental wellness. Discover evidence-based insights for emotional well-being and psychological growth.
         </p>
+        <div class="category-stats">
+            <div class="stat-item">
+                <div class="stat-number" id="articleCount">0</div>
+                <div class="stat-label">Articles</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">~9</div>
+                <div class="stat-label">Min Read</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">🧠</div>
+                <div class="stat-label">Mind Insights</div>
+            </div>
+        </div>
     </header>
 
     <main class="articles-container">
-        <div style="text-align: center; padding: var(--spacing-8);">
-            <p style="font-size: var(--font-size-lg); color: var(--text-secondary);">Psychology articles coming soon...</p>
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Explore Psychology Topics</h3>
+            <div class="filter-tags">
+                <button class="filter-tag active" data-filter="all">All Articles</button>
+                <button class="filter-tag" data-filter="personality-types">Personality Types</button>
+                <button class="filter-tag" data-filter="behavior">Behavior</button>
+                <button class="filter-tag" data-filter="mental-health">Mental Health</button>
+                <button class="filter-tag" data-filter="emotional-intelligence">Emotional Intelligence</button>
+                <button class="filter-tag" data-filter="wellbeing">Wellbeing</button>
+            </div>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="articles-grid" id="articlesGrid">
+            <!-- Articles will be populated by JavaScript from article registry -->
         </div>
     </main>
 
@@ -143,13 +317,104 @@
     </footer>
 
     <script src="../../js/app.js"></script>
+    <script src="../js/article-registry.js"></script>
     <script>
+        // Initialize article registry
+        const registry = new ArticleRegistry();
+        const currentCategory = 'psychology';
+        
+        // DOM elements
+        const articlesGrid = document.getElementById('articlesGrid');
+        const filterTags = document.querySelectorAll('.filter-tag');
+        const articleCount = document.getElementById('articleCount');
+
+        // Current state
+        let currentFilter = 'all';
+        let displayedArticles = [];
+        let allCategoryArticles = [];
+
+        // Initialize page
+        function initializePage() {
+            // Get all articles for this category
+            allCategoryArticles = registry.getArticlesByCategory(currentCategory);
+            
+            // Display all articles initially
+            displayArticles(allCategoryArticles);
+            
+            // Update stats
+            updateStats();
+            
+            // Setup event listeners
+            setupEventListeners();
+        }
+
+        function displayArticles(articles) {
+            displayedArticles = articles;
+            
+            if (articles.length === 0) {
+                articlesGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: var(--spacing-8);">
+                        <h3>No articles found for this filter.</h3>
+                        <p>Try selecting a different topic or check back soon for new content!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            articlesGrid.innerHTML = articles.map(article => 
+                registry.generateArticleCard(article)
+            ).join('');
+
+            // Update article count
+            articleCount.textContent = articles.length;
+        }
+
+        function updateStats() {
+            const stats = registry.getArticleStats(currentCategory);
+            articleCount.textContent = stats.count;
+        }
+
+        function setupEventListeners() {
+            // Filter functionality
+            filterTags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    // Remove active class from all tags
+                    filterTags.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tag
+                    tag.classList.add('active');
+
+                    const filter = tag.dataset.filter;
+                    currentFilter = filter;
+
+                    let filteredArticles;
+                    if (filter === 'all') {
+                        filteredArticles = allCategoryArticles;
+                    } else {
+                        filteredArticles = registry.getArticlesByTag(filter).filter(
+                            article => article.category === currentCategory
+                        );
+                    }
+
+                    displayArticles(filteredArticles);
+                });
+            });
+        }
+
+        // Initialize theme
         const savedTheme = localStorage.getItem('personality-spark-theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
         
+        // Update theme toggle icon
         const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = themeToggle.querySelector('.theme-icon');
-        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+        if (themeToggle) {
+            const themeIcon = themeToggle.querySelector('.theme-icon');
+            if (themeIcon) {
+                themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+
+        // Initialize page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initializePage);
     </script>
 </body>
 </html>
