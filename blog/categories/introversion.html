@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introversion & Personality Types - PersonalitySpark Blog</title>
+    <meta name="description" content="Explore the world of introversion, personality types, MBTI insights, and tips for thriving as an introvert in an extroverted world.">
+    <meta name="keywords" content="introversion, introvert, personality types, MBTI, quiet strength, social energy, solitude">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Introversion & Personality Types - PersonalitySpark Blog">
+    <meta property="og:description" content="Explore the world of introversion, personality types, MBTI insights, and tips for thriving as an introvert">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://personalityspark.com/blog/categories/introversion.html">
+    <meta property="og:image" content="https://personalityspark.com/blog/assets/images/introversion-category.jpg">
+    
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
+    <link rel="canonical" href="https://personalityspark.com/blog/categories/introversion.html">
+    
+    <style>
+        .category-header {
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+            padding: var(--spacing-12) var(--spacing-6);
+            text-align: center;
+            color: white;
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .category-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: var(--spacing-4);
+            line-height: 1.2;
+        }
+        
+        .category-description {
+            font-size: var(--font-size-lg);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        
+        .category-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-6);
+            margin-top: var(--spacing-6);
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-1);
+        }
+        
+        .stat-label {
+            font-size: var(--font-size-sm);
+            opacity: 0.9;
+        }
+        
+        .articles-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-6);
+        }
+        
+        .filter-section {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-6);
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .filter-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--spacing-4);
+            color: var(--text-primary);
+        }
+        
+        .filter-tags {
+            display: flex;
+            gap: var(--spacing-2);
+            flex-wrap: wrap;
+        }
+        
+        .filter-tag {
+            background: var(--primary-100);
+            color: var(--primary-700);
+            padding: var(--spacing-2) var(--spacing-3);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .filter-tag:hover,
+        .filter-tag.active {
+            background: var(--primary-600);
+            color: white;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--spacing-6);
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .article-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-6);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-3);
+            margin-bottom: var(--spacing-3);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+        
+        .article-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-3);
+            line-height: 1.4;
+        }
+        
+        .article-excerpt {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .article-tags {
+            display: flex;
+            gap: var(--spacing-2);
+            flex-wrap: wrap;
+        }
+        
+        .article-tag {
+            background: var(--primary-50);
+            color: var(--primary-600);
+            padding: var(--spacing-1) var(--spacing-2);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+        }
+        
+        .breadcrumb {
+            padding: var(--spacing-4) var(--spacing-6);
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-600);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+        }
+        
+        .breadcrumb span {
+            color: var(--text-secondary);
+            margin: 0 var(--spacing-2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../" class="nav-logo">
+                <span class="logo-icon">✨</span>
+                PersonalitySpark
+            </a>
+            <div class="nav-links">
+                <a href="../../#home" class="nav-link">Home</a>
+                <a href="../../#quizzes" class="nav-link">Quizzes</a>
+                <a href="../index.html" class="nav-link active">Blog</a>
+                <a href="../../#about" class="nav-link">About</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="../../">Home</a>
+        <span>/</span>
+        <a href="../index.html">Blog</a>
+        <span>/</span>
+        <span style="color: var(--text-secondary);">Introversion & Personality Types</span>
+    </div>
+
+    <!-- Category Header -->
+    <header class="category-header">
+        <div class="category-icon">🤫</div>
+        <h1 class="category-title">Introversion & Personality Types</h1>
+        <p class="category-description">
+            Embrace your quiet strength. Discover insights into introversion, personality types, MBTI wisdom, and practical tips for thriving as an introvert in an extroverted world.
+        </p>
+        <div class="category-stats">
+            <div class="stat-item">
+                <div class="stat-number" id="articleCount">0</div>
+                <div class="stat-label">Articles</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">~6</div>
+                <div class="stat-label">Min Read</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Insights</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Articles Container -->
+    <main class="articles-container">
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Explore Topics</h3>
+            <div class="filter-tags">
+                <button class="filter-tag active" data-filter="all">All Articles</button>
+                <button class="filter-tag" data-filter="mbti">MBTI Types</button>
+                <button class="filter-tag" data-filter="social">Social Skills</button>
+                <button class="filter-tag" data-filter="career">Career Advice</button>
+                <button class="filter-tag" data-filter="relationships">Relationships</button>
+                <button class="filter-tag" data-filter="self-care">Self-Care</button>
+                <button class="filter-tag" data-filter="misconceptions">Myths & Facts</button>
+                <button class="filter-tag" data-filter="strengths">Strengths</button>
+            </div>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="articles-grid" id="articlesGrid">
+            <!-- Articles will be populated by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PersonalitySpark Blog</h4>
+                    <p>Your trusted source for personality insights, spiritual growth, and self-discovery.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="twin-flames.html">Twin Flames</a></li>
+                        <li><a href="introversion.html">Introversion</a></li>
+                        <li><a href="angel-numbers.html">Angel Numbers</a></li>
+                        <li><a href="relationships.html">Relationships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../#home">Home</a></li>
+                        <li><a href="../../#quizzes">Personality Tests</a></li>
+                        <li><a href="../../#about">About</a></li>
+                        <li><a href="../../#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PersonalitySpark. All rights reserved. | <a href="../../privacy.html">Privacy Policy</a> | <a href="../../terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script>
+        // Initialize theme
+        const savedTheme = localStorage.getItem('personality-spark-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    </script>
+</body>
+</html>

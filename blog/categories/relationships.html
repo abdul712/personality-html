@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relationships & Love - PersonalitySpark Blog</title>
+    <meta name="description" content="Navigate the complexities of love and relationships. Expert advice on dating, communication, and building meaningful connections.">
+    <meta name="keywords" content="relationships, love, dating, communication, romance, partnership, compatibility">
+    
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
+    <link rel="canonical" href="https://personalityspark.com/blog/categories/relationships.html">
+    
+    <style>
+        .category-header {
+            background: linear-gradient(135deg, #EC4899 0%, #BE185D 100%);
+            padding: var(--spacing-12) var(--spacing-6);
+            text-align: center;
+            color: white;
+            margin-bottom: var(--spacing-8);
+        }
+        
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .category-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: var(--spacing-4);
+            line-height: 1.2;
+        }
+        
+        .category-description {
+            font-size: var(--font-size-lg);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        
+        .articles-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-6);
+        }
+        
+        .breadcrumb {
+            padding: var(--spacing-4) var(--spacing-6);
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .breadcrumb a {
+            color: var(--primary-600);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+        }
+        
+        .breadcrumb span {
+            color: var(--text-secondary);
+            margin: 0 var(--spacing-2);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../" class="nav-logo">
+                <span class="logo-icon">✨</span>
+                PersonalitySpark
+            </a>
+            <div class="nav-links">
+                <a href="../../#home" class="nav-link">Home</a>
+                <a href="../../#quizzes" class="nav-link">Quizzes</a>
+                <a href="../index.html" class="nav-link active">Blog</a>
+                <a href="../../#about" class="nav-link">About</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="../../">Home</a>
+        <span>/</span>
+        <a href="../index.html">Blog</a>
+        <span>/</span>
+        <span style="color: var(--text-secondary);">Relationships & Love</span>
+    </div>
+
+    <header class="category-header">
+        <div class="category-icon">💕</div>
+        <h1 class="category-title">Relationships & Love</h1>
+        <p class="category-description">
+            Navigate the beautiful complexities of love and relationships. Discover expert advice on dating, communication, and building meaningful connections that last.
+        </p>
+    </header>
+
+    <main class="articles-container">
+        <div style="text-align: center; padding: var(--spacing-8);">
+            <p style="font-size: var(--font-size-lg); color: var(--text-secondary);">Relationship articles coming soon...</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PersonalitySpark Blog</h4>
+                    <p>Your trusted source for personality insights, spiritual growth, and self-discovery.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="twin-flames.html">Twin Flames</a></li>
+                        <li><a href="introversion.html">Introversion</a></li>
+                        <li><a href="angel-numbers.html">Angel Numbers</a></li>
+                        <li><a href="relationships.html">Relationships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../#home">Home</a></li>
+                        <li><a href="../../#quizzes">Personality Tests</a></li>
+                        <li><a href="../../#about">About</a></li>
+                        <li><a href="../../#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PersonalitySpark. All rights reserved. | <a href="../../privacy.html">Privacy Policy</a> | <a href="../../terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script>
+        const savedTheme = localStorage.getItem('personality-spark-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    </script>
+</body>
+</html>
