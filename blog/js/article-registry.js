@@ -789,7 +789,7 @@ class ArticleRegistry {
     {
         "title": "Signs Someone Is Overly Compliant: Understanding Behavior Patterns - PersonalitySpark",
         "filename": "behavior-patterns-guide.html",
-        "category": "uncategorized",
+        "category": "psychology",
         "excerpt": "Recognize the signs of excessive compliance behavior. Learn about difficulty saying no, constant need for approval, and strategies to develop healthy assertiveness.",
         "readTime": "5 min",
         "date": "2025-08-17",
