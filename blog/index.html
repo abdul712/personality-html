@@ -373,46 +373,23 @@
         <h2>Featured Articles</h2>
         <div class="posts-grid" id="featuredPosts">
             <!-- Featured posts will be loaded dynamically -->
-            <div class="post-card">
-                <div class="post-meta">
-                    <span class="post-category-tag">Twin Flames</span>
-                    <span>•</span>
-                    <span>5 min read</span>
-                </div>
-                <h3 class="post-title">10 Signs Your Twin Flame Separation Is Coming to an End</h3>
-                <p class="post-excerpt">Discover the key indicators that suggest your twin flame separation phase may be nearing its conclusion...</p>
-                <a href="posts/10-signs-twin-flame-separation-ending.html" class="read-more">
-                    Read More →
-                </a>
-            </div>
-            
-            <div class="post-card">
-                <div class="post-meta">
-                    <span class="post-category-tag">Introversion</span>
-                    <span>•</span>
-                    <span>7 min read</span>
-                </div>
-                <h3 class="post-title">Are Introverts Attractive to Girls? Unveiling the Truth</h3>
-                <p class="post-excerpt">Explore the unique qualities that make introverts incredibly appealing in romantic relationships...</p>
-                <a href="posts/are-introverts-attractive-to-girls.html" class="read-more">
-                    Read More →
-                </a>
-            </div>
-            
-            <div class="post-card">
-                <div class="post-meta">
-                    <span class="post-category-tag">Angel Numbers</span>
-                    <span>•</span>
-                    <span>4 min read</span>
-                </div>
-                <h3 class="post-title">1111 Angel Number Twin Flame: Divine Messages Revealed</h3>
-                <p class="post-excerpt">Uncover the spiritual significance of seeing 1111 in your twin flame journey...</p>
-                <a href="posts/1111-angel-number-twin-flame.html" class="read-more">
-                    Read More →
-                </a>
-            </div>
         </div>
     </section>
+
+    <script src="js/article-registry.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const articleRegistry = new ArticleRegistry();
+            const featuredPostsContainer = document.getElementById('featuredPosts');
+
+            const articles = articleRegistry.getFeaturedArticles();
+
+            articles.forEach(article => {
+                const articleCard = articleRegistry.generateArticleCard(article);
+                featuredPostsContainer.innerHTML += articleCard;
+            });
+        });
+    </script>
 
     <!-- Newsletter Signup -->
     <section class="container" style="text-align: center; padding: var(--spacing-12) 0;">
