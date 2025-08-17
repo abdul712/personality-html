@@ -157,12 +157,12 @@ http {
 
 [phases.setup]
 nixPkgs = ['nginx', 'nodejs']
-
-[phases.build]
-cmds = ['node scripts/create-article-registry.js']
 nixOverlays = []
 nixpkgsArchive = '5148520bfab61f99fd25fb9ff7bfbb50dad3c9db'
 cmds = ['mkdir /etc/nginx/ /var/log/nginx/ /var/cache/nginx/']
+
+[phases.build]
+cmds = ['node scripts/create-article-registry.js']
 
 [start]
 cmd = '[[ -z "${PORT}" ]] && echo "Environment variable PORT not found. Using PORT 80" || sed -i "s/0.0.0.0:80/$PORT/g" /assets/nginx.conf && nginx -c /assets/nginx.conf'
