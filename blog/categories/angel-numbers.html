@@ -322,8 +322,367 @@
     </footer>
 
     <script src="../../js/app.js"></script>
-    <script src="../js/article-registry.js"></script>
     <script>
+        // PERMANENT FIX: Complete embedded ArticleRegistry with all articles
+        // This bypasses any deployment sync issues with external JS files
+        
+        class ArticleRegistry {
+            constructor() {
+                this.articles = [];
+                this.categories = {
+                    'twin-flames': {
+                        name: 'Twin Flames & Spiritual Connections',
+                        icon: '💫',
+                        keywords: ['twin-flame', 'twin flame', 'runner', 'chaser', 'separation', 'reunion', 'spiritual-connection'],
+                        tags: ['separation', 'reunion', 'runner', 'chaser', 'signs', 'love', 'healing', 'awakening']
+                    },
+                    'angel-numbers': {
+                        name: 'Angel Numbers & Spirituality',
+                        icon: '🔢',
+                        keywords: ['angel-number', 'angel number', '1111', '2222', '3333', '0000', '1010', '1034'],
+                        tags: ['manifestation', 'spiritual', 'guidance', 'numerology', 'divine', 'synchronicity']
+                    }
+                };
+                this.initializeArticles();
+            }
+
+            initializeArticles() {
+                // ALL ANGEL NUMBER ARTICLES (18 total) + Twin Flame Articles for cross-category filtering
+                this.articles = [
+                    // Angel Number Articles (Original 8)
+                    {
+                        title: "0000 Angel Number Twin Flame Meaning",
+                        filename: "0000-angel-number-twin-flame.html",
+                        category: "angel-numbers",
+                        excerpt: "Discover the profound spiritual significance of 0000 angel number in twin flame relationships, representing new beginnings and divine guidance.",
+                        readTime: "5 min",
+                        date: "2025-08-17",
+                        tags: ["manifestation", "spiritual", "guidance"]
+                    },
+                    {
+                        title: "0707 Angel Number Twin Flame",
+                        filename: "0707-angel-number-twin-flame.html",
+                        category: "angel-numbers",
+                        excerpt: "Explore the spiritual alignment and divine guidance messages of 0707 angel number in your twin flame journey.",
+                        readTime: "5 min",
+                        date: "2025-08-17",
+                        tags: ["spiritual", "guidance", "alignment"]
+                    },
+                    {
+                        title: "0808 Angel Number Twin Flame",
+                        filename: "0808-angel-number-twin-flame.html",
+                        category: "angel-numbers",
+                        excerpt: "Understand the messages of financial prosperity and spiritual growth in twin flame relationships through 0808.",
+                        readTime: "5 min",
+                        date: "2025-08-17",
+                        tags: ["prosperity", "spiritual", "growth"]
+                    },
+                    {
+                        title: "1010 Angel Number Twin Flame",
+                        filename: "1010-angel-number-twin-flame.html",
+                        category: "angel-numbers",
+                        excerpt: "Discover the transformative power of 1010 in twin flame relationships, symbolizing new beginnings and spiritual alignment.",
+                        readTime: "6 min",
+                        date: "2025-08-17",
+                        tags: ["transformation", "spiritual", "alignment"]
+                    },
+                    {
+                        title: "1034 Angel Number Twin Flame",
+                        filename: "1034-angel-number-twin-flame.html",
+                        category: "angel-numbers",
+                        excerpt: "Learn about divine support and spiritual growth guidance in your twin flame journey with angel number 1034.",
+                        readTime: "5 min",
+                        date: "2025-08-17",
+                        tags: ["divine", "support", "growth"]
+                    },
+                    {
+                        title: "1111 Angel Number Twin Flame Meaning",
+                        filename: "1111-angel-number-twin-flame.html",
+                        category: "angel-numbers",
+                        excerpt: "Uncover the spiritual significance of seeing 1111 in your twin flame journey and its manifestation power.",
+                        readTime: "6 min",
+                        date: "2025-08-17",
+                        tags: ["manifestation", "spiritual", "awakening"],
+                        featured: true
+                    },
+                    {
+                        title: "2222 Angel Number Twin Flame",
+                        filename: "2222-angel-number-twin-flame.html",
+                        category: "angel-numbers",
+                        excerpt: "Explore balance, harmony, and partnership messages from angel number 2222 in twin flame relationships.",
+                        readTime: "5 min",
+                        date: "2025-08-17",
+                        tags: ["balance", "harmony", "partnership"]
+                    },
+                    {
+                        title: "333 Angel Number Twin Flame",
+                        filename: "333-angel-number-twin-flame.html",
+                        category: "angel-numbers",
+                        excerpt: "Discover the divine creativity and spiritual growth signals of 333 in twin flame journeys.",
+                        readTime: "5 min",
+                        date: "2025-08-17",
+                        tags: ["creativity", "spiritual", "growth"]
+                    },
+                    
+                    // NEW ANGEL NUMBER ARTICLES - Batch A (1 article from Subagent B)
+                    {
+                        title: "444 Angel Number: Divine Protection & Stability",
+                        filename: "444-angel-number-meaning.html",
+                        category: "angel-numbers",
+                        excerpt: "Experience divine protection and stability through 444 angel number guidance in your spiritual journey.",
+                        readTime: "6 min",
+                        date: "2025-08-17",
+                        tags: ["protection", "stability", "divine"]
+                    },
+                    
+                    // NEW ANGEL NUMBER ARTICLES - Batch B (9 articles from Subagent D)
+                    {
+                        title: "1313 Angel Number: Spiritual Transformation & Divine Awakening",
+                        filename: "1313-angel-number-spiritual-transformation.html",
+                        category: "angel-numbers",
+                        excerpt: "Experience profound spiritual transformation and divine awakening through the power of 1313 angel number.",
+                        readTime: "7 min",
+                        date: "2025-08-17",
+                        tags: ["transformation", "awakening", "spiritual"],
+                        featured: true
+                    },
+                    {
+                        title: "1414 Angel Number: Divine Guidance & Angelic Messages",
+                        filename: "1414-angel-number-divine-guidance.html",
+                        category: "angel-numbers",
+                        excerpt: "Receive divine guidance and powerful angelic messages through 1414 angel number synchronicities.",
+                        readTime: "6 min",
+                        date: "2025-08-17",
+                        tags: ["guidance", "divine", "messages"]
+                    },
+                    {
+                        title: "1515 Angel Number: Major Life Changes & Personal Freedom",
+                        filename: "1515-angel-number-major-life-changes.html",
+                        category: "angel-numbers",
+                        excerpt: "Navigate major life changes and embrace personal freedom with 1515 angel number wisdom.",
+                        readTime: "7 min",
+                        date: "2025-08-17",
+                        tags: ["changes", "freedom", "transformation"]
+                    },
+                    {
+                        title: "1616 Angel Number: Spiritual Awakening & Inner Wisdom",
+                        filename: "1616-angel-number-spiritual-awakening.html",
+                        category: "angel-numbers",
+                        excerpt: "Unlock spiritual awakening and access your inner wisdom through 1616 angel number guidance.",
+                        readTime: "6 min",
+                        date: "2025-08-17",
+                        tags: ["awakening", "wisdom", "spiritual"]
+                    },
+                    {
+                        title: "1717 Angel Number: Intuitive Development & Psychic Awakening",
+                        filename: "1717-angel-number-intuitive-development.html",
+                        category: "angel-numbers",
+                        excerpt: "Develop your intuitive abilities and experience psychic awakening with 1717 angel number power.",
+                        readTime: "8 min",
+                        date: "2025-08-17",
+                        tags: ["intuitive", "psychic", "awakening"]
+                    },
+                    {
+                        title: "1818 Angel Number: Material Abundance & Financial Prosperity",
+                        filename: "1818-angel-number-material-abundance.html",
+                        category: "angel-numbers",
+                        excerpt: "Manifest material abundance and financial prosperity through 1818 angel number divine guidance.",
+                        readTime: "6 min",
+                        date: "2025-08-17",
+                        tags: ["abundance", "prosperity", "manifestation"]
+                    },
+                    {
+                        title: "1919 Angel Number: Soul Mission Completion & Divine Purpose",
+                        filename: "1919-angel-number-soul-mission-completion.html",
+                        category: "angel-numbers",
+                        excerpt: "Complete your soul mission and fulfill your divine purpose with 1919 angel number spiritual guidance.",
+                        readTime: "7 min",
+                        date: "2025-08-17",
+                        tags: ["mission", "purpose", "completion"]
+                    },
+                    {
+                        title: "1234 Angel Number: Step-by-Step Divine Guidance & Progress",
+                        filename: "1234-angel-number-step-by-step-guidance.html",
+                        category: "angel-numbers",
+                        excerpt: "Follow step-by-step divine guidance and make steady spiritual progress with 1234 angel number.",
+                        readTime: "6 min",
+                        date: "2025-08-17",
+                        tags: ["guidance", "progress", "steps"]
+                    },
+                    {
+                        title: "1122 Angel Number: Master Number Power & Twin Flame Union",
+                        filename: "1122-angel-number-master-number-power.html",
+                        category: "angel-numbers",
+                        excerpt: "Harness master number power and experience twin flame union through 1122 angel number energy.",
+                        readTime: "8 min",
+                        date: "2025-08-17",
+                        tags: ["master-number", "union", "power"],
+                        featured: true
+                    },
+
+                    // Twin Flame Articles (for cross-category filtering - all 12 articles)
+                    {
+                        title: "10 Signs Your Twin Flame Separation Is Coming to an End",
+                        filename: "10-signs-twin-flame-separation-ending.html",
+                        category: "twin-flames",
+                        excerpt: "Discover the profound indicators that signal your twin flame separation phase may be nearing its conclusion and prepare for the beautiful reunion ahead.",
+                        readTime: "5 min",
+                        date: "2025-08-17",
+                        tags: ["separation", "signs", "reunion"],
+                        featured: true
+                    },
+                    {
+                        title: "10 Signs of Twin Flame Love",
+                        filename: "10-signs-of-twin-flame-love.html",
+                        category: "twin-flames",
+                        excerpt: "Explore the unique characteristics of twin flame love and spiritual connection that transcend ordinary relationships.",
+                        readTime: "6 min",
+                        date: "2025-08-17",
+                        tags: ["love", "signs", "spiritual"]
+                    },
+                    {
+                        title: "10 Common Twin Flame Runner Fears",
+                        filename: "10-common-twin-flame-runner-fears.html",
+                        category: "twin-flames",
+                        excerpt: "Understanding the fears that cause twin flame runners and explore paths to healing and reunion.",
+                        readTime: "7 min",
+                        date: "2025-08-17",
+                        tags: ["runner", "fears", "healing"]
+                    },
+                    {
+                        title: "12 Signs You've Met Your Twin Flame",
+                        filename: "12-signs-youve-met-your-twin-flame.html",
+                        category: "twin-flames",
+                        excerpt: "Discover the 12 definitive signs that indicate you've encountered your mirror soul and begun this transformative spiritual journey.",
+                        readTime: "6 min",
+                        date: "2025-08-17",
+                        tags: ["signs", "recognition", "spiritual"]
+                    },
+                    {
+                        title: "10 Common Twin Flame Separation Feelings",
+                        filename: "10-common-twin-flame-separation-feelings.html",
+                        category: "twin-flames",
+                        excerpt: "Learn to understand and manage the complex emotions experienced during twin flame separation with practical coping strategies.",
+                        readTime: "8 min",
+                        date: "2025-08-17",
+                        tags: ["separation", "feelings", "healing"]
+                    },
+                    {
+                        title: "10 Deep Twin Flame Runner Feelings",
+                        filename: "10-deep-twin-flame-runner-feelings.html",
+                        category: "twin-flames",
+                        excerpt: "Deep psychological exploration of twin flame runner emotions and the healing journey toward reunion.",
+                        readTime: "7 min",
+                        date: "2025-08-17",
+                        tags: ["runner", "feelings", "psychology"]
+                    },
+                    {
+                        title: "6 Twin Flame Telepathy Signs: The Sacred Mind Connection",
+                        filename: "twin-flame-telepathy-signs.html",
+                        category: "twin-flames",
+                        excerpt: "Discover the profound telepathic connection between twin flames and learn to recognize the sacred signs of mind-to-mind communication.",
+                        readTime: "6 min",
+                        date: "2025-08-17",
+                        tags: ["telepathy", "signs", "connection"],
+                        featured: true
+                    },
+                    {
+                        title: "12 Twin Flame Reunion Signs: The Sacred Return to Unity",
+                        filename: "12-twin-flame-reunion-signs.html",
+                        category: "twin-flames",
+                        excerpt: "Recognize the divine indicators that your twin flame reunion is approaching and prepare for the sacred return to unity.",
+                        readTime: "8 min",
+                        date: "2025-08-17",
+                        tags: ["reunion", "signs", "unity"]
+                    },
+                    {
+                        title: "8 Signs of Twin Flame Runner Awakening: The Sacred Return",
+                        filename: "twin-flame-runner-awakening-signs.html",
+                        category: "twin-flames",
+                        excerpt: "Understand the profound transformation signs when the twin flame runner begins their spiritual awakening journey.",
+                        readTime: "7 min",
+                        date: "2025-08-17",
+                        tags: ["runner", "awakening", "transformation"]
+                    },
+                    {
+                        title: "Divine Masculine Awakening in Twin Flame Journey",
+                        filename: "divine-masculine-awakening-twin-flame.html",
+                        category: "twin-flames",
+                        excerpt: "Explore the sacred awakening of divine masculine energy and its transformative role in the twin flame journey.",
+                        readTime: "6 min",
+                        date: "2025-08-17",
+                        tags: ["divine-masculine", "awakening", "healing"]
+                    },
+                    {
+                        title: "Sacred Feminine Energy Embodiment",
+                        filename: "sacred-feminine-energy-embodiment.html",
+                        category: "twin-flames",
+                        excerpt: "Discover how to embody sacred feminine energy and its powerful role in twin flame union and spiritual growth.",
+                        readTime: "7 min",
+                        date: "2025-08-17",
+                        tags: ["sacred-feminine", "energy", "embodiment"]
+                    },
+                    {
+                        title: "Twin Flame Chakra Healing & Alignment",
+                        filename: "twin-flame-chakra-healing-alignment.html",
+                        category: "twin-flames",
+                        excerpt: "Master advanced chakra healing techniques specifically designed for twin flame connection and spiritual alignment.",
+                        readTime: "8 min",
+                        date: "2025-08-17",
+                        tags: ["chakra", "healing", "alignment"]
+                    }
+                ];
+            }
+
+            getArticlesByCategory(categoryKey) {
+                return this.articles.filter(article => article.category === categoryKey);
+            }
+
+            getArticlesByTag(tag) {
+                return this.articles.filter(article => article.tags.includes(tag));
+            }
+
+            getArticleStats(categoryKey) {
+                const categoryArticles = this.getArticlesByCategory(categoryKey);
+                return {
+                    count: categoryArticles.length,
+                    avgReadTime: Math.round(
+                        categoryArticles.reduce((sum, article) => 
+                            sum + parseInt(article.readTime), 0) / categoryArticles.length
+                    )
+                };
+            }
+
+            generateArticleCard(article) {
+                const tagsHtml = article.tags.map(tag => 
+                    `<span class="article-tag">${tag.charAt(0).toUpperCase() + tag.slice(1).replace('-', ' ')}</span>`
+                ).join('');
+
+                return `
+                    <a href="../posts/${article.filename}" class="article-card" data-tags="${article.tags.join(',')}">
+                        <div class="article-meta">
+                            <span>📅 ${this.formatDate(article.date)}</span>
+                            <span>📖 ${article.readTime} read</span>
+                        </div>
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <div class="article-tags">
+                            ${tagsHtml}
+                        </div>
+                    </a>
+                `;
+            }
+
+            formatDate(dateString) {
+                const date = new Date(dateString);
+                return date.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'short', 
+                    day: 'numeric' 
+                });
+            }
+        }
+
         // Initialize article registry
         const registry = new ArticleRegistry();
         const currentCategory = 'angel-numbers';
