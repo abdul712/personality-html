@@ -50,7 +50,7 @@ class ArticleRegistry {
     initializeArticles() {
         // Registry of all articles with metadata
         this.articles = [
-            // Twin Flame Articles
+            // Twin Flame Articles (Original 6 + New Batch A & B)
             {
                 title: "10 Signs Your Twin Flame Separation Is Coming to an End",
                 filename: "10-signs-twin-flame-separation-ending.html",
@@ -105,6 +105,63 @@ class ArticleRegistry {
                 readTime: "7 min",
                 date: "2025-08-17",
                 tags: ["runner", "feelings", "psychology"]
+            },
+            // New Twin Flame Articles - Batch A (Subagent A)
+            {
+                title: "6 Twin Flame Telepathy Signs: The Sacred Mind Connection",
+                filename: "twin-flame-telepathy-signs.html",
+                category: "twin-flames",
+                excerpt: "Discover the profound telepathic connection between twin flames and learn to recognize the sacred signs of mind-to-mind communication.",
+                readTime: "6 min",
+                date: "2025-08-17",
+                tags: ["telepathy", "signs", "connection"],
+                featured: true
+            },
+            {
+                title: "12 Twin Flame Reunion Signs: The Sacred Return to Unity",
+                filename: "12-twin-flame-reunion-signs.html",
+                category: "twin-flames",
+                excerpt: "Recognize the divine indicators that your twin flame reunion is approaching and prepare for the sacred return to unity.",
+                readTime: "8 min",
+                date: "2025-08-17",
+                tags: ["reunion", "signs", "unity"]
+            },
+            {
+                title: "8 Signs of Twin Flame Runner Awakening: The Sacred Return",
+                filename: "twin-flame-runner-awakening-signs.html",
+                category: "twin-flames",
+                excerpt: "Understand the profound transformation signs when the twin flame runner begins their spiritual awakening journey.",
+                readTime: "7 min",
+                date: "2025-08-17",
+                tags: ["runner", "awakening", "transformation"]
+            },
+            // New Twin Flame Articles - Batch B (Subagent C)
+            {
+                title: "Divine Masculine Awakening in Twin Flame Journey",
+                filename: "divine-masculine-awakening-twin-flame.html",
+                category: "twin-flames",
+                excerpt: "Explore the sacred awakening of divine masculine energy and its transformative role in the twin flame journey.",
+                readTime: "6 min",
+                date: "2025-08-17",
+                tags: ["divine-masculine", "awakening", "healing"]
+            },
+            {
+                title: "Sacred Feminine Energy Embodiment",
+                filename: "sacred-feminine-energy-embodiment.html",
+                category: "twin-flames",
+                excerpt: "Discover how to embody sacred feminine energy and its powerful role in twin flame union and spiritual growth.",
+                readTime: "7 min",
+                date: "2025-08-17",
+                tags: ["sacred-feminine", "energy", "embodiment"]
+            },
+            {
+                title: "Twin Flame Chakra Healing & Alignment",
+                filename: "twin-flame-chakra-healing-alignment.html",
+                category: "twin-flames",
+                excerpt: "Master advanced chakra healing techniques specifically designed for twin flame connection and spiritual alignment.",
+                readTime: "8 min",
+                date: "2025-08-17",
+                tags: ["chakra", "healing", "alignment"]
             },
 
             // Angel Number Articles

@@ -1,0 +1,10 @@
+{
+  "name": "web",
+  "active": true,
+  "events": ["push", "pull_request"],
+  "config": {
+    "url": "https://pestkeen.com/api/v1/deploy?uuid=y0gwkso4koss4c88oggcs8ok&force=false",
+    "content_type": "json",
+    "insecure_ssl": "0"
+  }
+}
