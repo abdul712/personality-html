@@ -1,3 +1,5 @@
+
+
 const fs = require('fs');
 const path = require('path');
 
@@ -29,7 +31,7 @@ fs.readdirSync(postsDir).forEach(file => {
     articles.push({
       title,
       filename: file,
-      category,
+      category: category, // Use the extracted category
       excerpt,
       readTime,
       date: '2025-08-17',
