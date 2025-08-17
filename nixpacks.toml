@@ -156,7 +156,10 @@ http {
 '''
 
 [phases.setup]
-nixPkgs = ['nginx']
+nixPkgs = ['nginx', 'nodejs']
+
+[phases.build]
+cmds = ['node scripts/create-article-registry.js']
 nixOverlays = []
 nixpkgsArchive = '5148520bfab61f99fd25fb9ff7bfbb50dad3c9db'
 cmds = ['mkdir /etc/nginx/ /var/log/nginx/ /var/cache/nginx/']
