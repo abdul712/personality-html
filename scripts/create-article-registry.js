@@ -22,8 +22,45 @@ fs.readdirSync(postsDir).forEach(file => {
     const readTimeMatch = content.match(/<meta name="twitter:data1" content="(.*?)"/);
     const readTime = readTimeMatch ? readTimeMatch[1] : '5 min';
 
-    const categoryMatch = content.match(/<meta property="article:section" content="(.*?)"/);
-    const category = categoryMatch ? categoryMatch[1] : 'uncategorized';
+    // Determine category based on filename and content
+    let category = 'uncategorized';
+    const filename = file.toLowerCase();
+    const lowerContent = content.toLowerCase();
+    
+    // Check for twin flames category
+    if (filename.includes('twin-flame') || filename.includes('twin_flame') ||
+        filename.includes('runner') || filename.includes('chaser') || 
+        filename.includes('separation') || filename.includes('reunion') ||
+        lowerContent.includes('twin flame')) {
+        category = 'twin-flames';
+    }
+    // Check for angel numbers category
+    else if (filename.match(/\d{3,4}-angel-number/) || 
+             filename.includes('angel-number') || 
+             filename.includes('angel_number')) {
+        category = 'angel-numbers';
+    }
+    // Check for introversion category
+    else if (filename.includes('introvert') || filename.includes('introversion') ||
+             filename.includes('shy') || filename.includes('quiet')) {
+        category = 'introversion';
+    }
+    // Check for relationships category
+    else if (filename.includes('relationship') || filename.includes('dating') ||
+             filename.includes('love') || filename.includes('romance') ||
+             filename.includes('compatibility')) {
+        category = 'relationships';
+    }
+    // Check for psychology category
+    else if (filename.includes('psychology') || filename.includes('personality-type') ||
+             filename.includes('mental') || filename.includes('emotional')) {
+        category = 'psychology';
+    }
+    // Check for self-discovery category
+    else if (filename.includes('self-discovery') || filename.includes('personal-growth') ||
+             filename.includes('mindfulness') || filename.includes('awareness')) {
+        category = 'self-discovery';
+    }
 
     const tagsMatch = content.match(/<meta name="keywords" content="(.*?)"/);
     const tags = tagsMatch ? tagsMatch[1].split(',').map(tag => tag.trim()) : [];
