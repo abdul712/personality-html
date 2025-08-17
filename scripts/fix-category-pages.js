@@ -5,6 +5,17 @@ const path = require('path');
 
 // Category configurations
 const categories = {
+  'twin-flames': {
+    title: 'Twin Flame Articles - PersonalitySpark Blog',
+    description: 'Explore comprehensive articles on twin flame relationships, spiritual connections, separation, reunion, and awakening. Expert insights on twin flame runner, chaser dynamics, and divine love.',
+    keywords: 'twin flame articles, twin flame relationship, spiritual connection, twin flame separation, twin flame reunion, twin flame runner, twin flame chaser, divine love, soul connection',
+    icon: '💫',
+    heading: 'Twin Flames & Spiritual Connections',
+    subtitle: 'Explore the mystical world of twin flame relationships, separation, reunion, and spiritual awakening. Discover deep insights into the sacred journey of twin souls and divine connections.',
+    searchPlaceholder: 'Search twin flame articles...',
+    sectionTitle: 'Twin Flame Articles',
+    categoryKey: 'twin-flames'
+  },
   'introversion': {
     title: 'Introversion & Personality Articles - PersonalitySpark Blog',
     description: 'Comprehensive articles on introversion, personality types, communication styles, workplace success, and social strategies. Expert insights for introverts and personality development.',
