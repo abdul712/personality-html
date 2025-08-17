@@ -383,6 +383,7 @@
             const postsGrid = document.getElementById('postsGrid');
 
             const articles = articleRegistry.getArticlesByCategory('twin-flames');
+            console.log(articles);
 
             articles.forEach(article => {
                 const articleCard = articleRegistry.generateArticleCard(article);
