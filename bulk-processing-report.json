@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-08-18T23:18:48.072Z",
+  "processed": 7,
+  "errors": 0,
+  "articles": [
+    {
+      "title": "Introverts Guide: How to Make Money",
+      "filename": "introverts-guide-how-to-make-money.html",
+      "category": "Angel Numbers",
+      "sourceFile": "Introverts_Guide_How_to_Make_Money.txt"
+    },
+    {
+      "title": "Top Spots for Introverts to Meet: Uncover Ideal Social Settings",
+      "filename": "top-spots-for-introverts-to-meet-uncover-ideal-social-settings.html",
+      "category": "Relationships",
+      "sourceFile": "Top_Spots_for_Introverts_to_Meet_Uncover_Ideal_Social_Settings.txt"
+    },
+    {
+      "title": "Why Do Bad Things Keep Happening To Me",
+      "filename": "why-do-bad-things-keep-happening-to-me.html",
+      "category": "Psychology",
+      "sourceFile": "Why_Do_Bad_Things_Keep_Happening_To_Me.txt"
+    },
+    {
+      "title": "Why Do I Feel Uncomfortable When Someone Touches Me",
+      "filename": "why-do-i-feel-uncomfortable-when-someone-touches-me.html",
+      "category": "Psychology",
+      "sourceFile": "Why_Do_I_Feel_Uncomfortable_When_Someone_Touches_Me.txt"
+    },
+    {
+      "title": "Why Do Introverts Talk to Themselves? Unveiling the Mystery",
+      "filename": "why-do-introverts-talk-to-themselves-unveiling-the-mystery.html",
+      "category": "Psychology",
+      "sourceFile": "Why_Do_Introverts_Talk_to_Themselves_Unveiling_the_Mystery.txt"
+    },
+    {
+      "title": "Why Does My Girlfriend Sleep So Much",
+      "filename": "why-does-my-girlfriend-sleep-so-much.html",
+      "category": "Psychology",
+      "sourceFile": "Why_Does_My_Girlfriend_Sleep_So_Much.txt"
+    },
+    {
+      "title": "Why Is Life So Hard",
+      "filename": "why-is-life-so-hard.html",
+      "category": "Psychology",
+      "sourceFile": "Why_Is_Life_So_Hard.txt"
+    }
+  ],
+  "errorDetails": [],
+  "categoryDistribution": {
+    "Angel Numbers": 1,
+    "Relationships": 1,
+    "Psychology": 5
+  }
+}
