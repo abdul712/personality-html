@@ -21,6 +21,12 @@ This means you're collecting valuable user insights while simultaneously generat
   - Non-intrusive ad formats
 - **Revenue**: Ads are live and generating income from day 1
 
+#### Ads.txt File Protection 🛡️
+- **Status**: ✅ Installed in website root (`/ads.txt`)
+- **Purpose**: Prevents ad fraud and unauthorized inventory sales  
+- **Benefits**: Higher CPMs, advertiser trust, fraud prevention
+- **Authorized Sellers**: Lists all approved ad networks and exchanges
+
 ### 📊 Google Analytics 4 (LIVE & TRACKING)
 **Purpose**: Detailed user behavior and traffic analytics
 - **Status**: ✅ Active and collecting data

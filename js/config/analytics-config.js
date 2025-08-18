@@ -41,6 +41,38 @@ class AnalyticsConfig {
             ]
         });
 
+        // Journey Script (Grow.me Enhanced)
+        this.scripts.set('journey', {
+            id: 'journey',
+            name: 'Journey (Grow.me Enhanced)',
+            description: 'Enhanced Grow.me ad script for optimized performance and revenue',
+            enabled: true,
+            priority: 2,
+            type: 'external',
+            category: 'monetization',
+            company: 'Grow.me',
+            src: '//scripts.scriptwrapper.com/tags/cd1147c1-3ea2-4dea-b685-660b90e8962e.js',
+            attributes: {
+                'type': 'text/javascript',
+                'async': 'async',
+                'data-noptimize': '1',
+                'data-cfasync': 'false'
+            },
+            conditions: {
+                consent: false, // Ad scripts typically don't require explicit consent
+                production: true, // Only load in production
+                cookiesEnabled: false // Basic ad functionality doesn't require cookies
+            },
+            features: [
+                'Enhanced ad placement algorithms',
+                'Improved performance optimization',
+                'Advanced revenue maximization',
+                'Complementary to main Grow.me script'
+            ],
+            siteId: 'cd1147c1-3ea2-4dea-b685-660b90e8962e',
+            relationship: 'Companion script to Grow.me for enhanced performance'
+        });
+
         // Google Analytics 4 (GA4) - Property ID: 426722856
         this.scripts.set('ga4', {
             id: 'ga4',

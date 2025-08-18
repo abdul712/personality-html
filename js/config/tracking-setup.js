@@ -16,6 +16,15 @@
             description: 'Displays ads across the website for revenue generation'
         },
 
+        // Journey Script (Grow.me Enhanced) - Performance optimization script
+        journey: {
+            enabled: true,
+            type: 'monetization',
+            company: 'Grow.me',
+            siteId: 'cd1147c1-3ea2-4dea-b685-660b90e8962e',
+            description: 'Enhanced Grow.me script for optimized ad performance and revenue'
+        },
+
         // Google Analytics 4 - Property ID: 426722856
         googleAnalytics: {
             enabled: true, // ✅ ACTIVE - Measurement ID configured
@@ -105,8 +114,9 @@
             console.log('✅ Hotjar configured');
         }
 
-        // Grow.me Ad Network is already configured by default in analytics-config.js
-        console.log('✅ Grow.me Ad Network enabled for website monetization');
+        // Grow.me ad scripts are already configured by default in analytics-config.js
+        console.log('✅ Grow.me Ad Network enabled (Primary script)');
+        console.log('✅ Journey Script enabled (Grow.me enhanced performance)');
 
         // Log configuration summary
         setTimeout(() => {

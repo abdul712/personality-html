@@ -6,14 +6,29 @@ The PersonalitySpark website now includes a comprehensive system for both analyt
 
 ## 🚀 Quick Start
 
-### Grow.me Ad Network (Already Installed) 💰
-The Grow.me script automatically displays ads across your website for monetization.
+### Enhanced Grow.me Setup (Already Installed) 💰⚡
+Your website now runs **TWO Grow.me scripts** for maximum performance and revenue optimization.
 
-- **Purpose**: Website monetization through automated ad placement
+#### Primary: Grow.me Ad Network  
+- **Purpose**: Main website monetization through automated ad placement  
 - **Status**: ✅ Installed and Active
-- **Site ID**: `U2l0ZTpjZDExNDczMS0zZWEyLTRkZWEtYjY4NS02NjBiOTBlODk2MmU=`
-- **Features**: Automatic ad placement, mobile-friendly ads, revenue optimization
-- **Script Location**: Loaded dynamically for optimal performance
+- **Site ID**: `U2l0ZTpjZDExNDczMS0zZWEyLTRkZWEtYjY4NS02NjBiOTBlODg2MmU=`
+- **Priority**: 1 (loads first)
+
+#### Enhanced: Journey Script (Grow.me)
+- **Purpose**: Performance optimization and enhanced ad delivery
+- **Status**: ✅ Installed and Active  
+- **Site ID**: `cd1147c1-3ea2-4dea-b685-660b90e8962e`
+- **Priority**: 2 (loads after main script)
+- **Company**: Same as Grow.me (enhanced version)
+
+**Combined Benefits**: Optimized ad placement, improved performance, enhanced revenue algorithms, mobile optimization, better loading speeds
+
+#### Ads.txt File (Already Installed) 🛡️
+- **Purpose**: Authorizes legitimate sellers of your advertising inventory
+- **Status**: ✅ Installed in website root  
+- **Location**: `/ads.txt` (accessible at `https://personalityspark.com/ads.txt`)
+- **Benefits**: Prevents ad fraud, improves revenue, ensures advertiser trust
 
 ### Google Analytics 4 (Already Installed)  
 Google Analytics 4 is now configured and active with your account.
@@ -25,10 +40,11 @@ Google Analytics 4 is now configured and active with your account.
 
 ## 💰 Monetization Status
 
-Your website is now earning revenue through:
-- **Grow.me Ad Network**: Automatically places and optimizes ads across all pages
-- **Ad Formats**: Display ads, mobile ads, and other non-intrusive formats
-- **Revenue**: Automatic optimization for maximum earnings
+Your website is now earning revenue through **ENHANCED GROW.ME SETUP**:
+- **Grow.me Ad Network** (Primary script): Automatically places and optimizes ads across all pages
+- **Journey Script** (Enhanced Grow.me): Performance optimization and advanced revenue algorithms
+- **Combined Benefits**: Improved ad loading, better placement algorithms, enhanced user experience
+- **Revenue**: Optimized Grow.me performance for maximum earnings and faster loading
 
 ## 📊 Adding Other Analytics Services
 

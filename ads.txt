@@ -1,0 +1,63 @@
+# Ads.txt v20250728
+managerdomain=journeymv.com
+contact=sales@journeymv.com
+ownerdomain=personalityspark.com
+journeymv.com, cd1147c1-3ea2-4dea-b685-660b90e8962e, DIRECT, 1363c924529b3998
+
+google.com, pub-1601477034266482, DIRECT, f08c47fec0942fa0
+google.com, pub-1601477034266482, RESELLER, f08c47fec0942fa0
+media.net, 8CU41446D, DIRECT
+pubmatic.com, 159463, RESELLER, 5d62403b186f2ace
+openx.com, 537100188, RESELLER, 6a698e2ec38604c6
+rubiconproject.com, 20322, RESELLER, 0bfd66d529a55807
+sonobi.com, 1a4e959a1b, RESELLER, d1a215d9eb5aee9e
+pubmatic.com, 160096, RESELLER, 5d62403b186f2ace
+33across.com, 0010b00002CpYhEAAV, RESELLER, bbea06d9c4d2853c
+appnexus.com, 10239, RESELLER, f5ab79cb980f11d1
+appnexus.com, 3703, RESELLER, f5ab79cb980f11d1
+yahoo.com, 1906653, RESELLER, e1a5b5b6e3255540
+aps.amazon.com, 3411, RESELLER
+improvedigital.com, 1863, RESELLER
+smartadserver.com, 3554, RESELLER
+sonobi.com, 1a4e959a1b, RESELLER, d1a215d9eb5aee9e
+rhythmone.com, 2564526802, RESELLER, a670c89d4a324e47
+video.unrulymedia.com, 2564526802, RESELLER
+amazon.com, 3411, RESELLER
+aps.amazon.com, 3411, DIRECT
+yahoo.com, 1906653, DIRECT, e1a5b5b6e3255540
+rhythmone.com, 2564526802, DIRECT, a670c89d4a324e47
+video.unrulymedia.com, 2564526802, DIRECT
+amazon.com, 3411, DIRECT
+smartadserver.com, 3554, DIRECT
+improvedigital.com, 1863, DIRECT
+contextweb.com, 561998, RESELLER, 89ff185a4c4e857c
+districtm.io, 101760, RESELLER, 3fd707be9c4527c3
+loopme.com, 9621, RESELLER, 6c8d5f95897a5a3b
+xandr.com, 3703, RESELLER, f5ab79cb980f11d1
+telaria.com, rwd19-cd1147c1, RESELLER, 1a4e959a1b26ccd0
+tremorhub.com, rwd19-cd1147c1, RESELLER, 1a4e959a1b26ccd0
+spotxchange.com, 285547, RESELLER, 7842df1d2fe2db34
+spotx.tv, 285547, RESELLER, 7842df1d2fe2db34
+freewheel.tv, 1220559, RESELLER
+freewheel.tv, 1221039, RESELLER
+advertising.com, 26154, RESELLER
+aol.com, 26154, RESELLER
+yahoo.com, 1906653, RESELLER
+verizonmedia.com, 1906653, RESELLER
+adnxs.com, 3703, RESELLER, f5ab79cb980f11d1
+indexexchange.com, 191503, RESELLER, 50b1c356f2c5c8fc
+contextweb.com, 561998, DIRECT, 89ff185a4c4e857c
+districtm.io, 101760, DIRECT, 3fd707be9c4527c3
+loopme.com, 9621, DIRECT, 6c8d5f95897a5a3b
+xandr.com, 3703, DIRECT, f5ab79cb980f11d1
+telaria.com, rwd19-cd1147c1, DIRECT, 1a4e959a1b26ccd0
+tremorhub.com, rwd19-cd1147c1, DIRECT, 1a4e959a1b26ccd0
+spotxchange.com, 285547, DIRECT, 7842df1d2fe2db34
+spotx.tv, 285547, DIRECT, 7842df1d2fe2db34
+freewheel.tv, 1220559, DIRECT
+freewheel.tv, 1221039, DIRECT
+advertising.com, 26154, DIRECT
+aol.com, 26154, DIRECT
+verizonmedia.com, 1906653, DIRECT
+adnxs.com, 3703, DIRECT, f5ab79cb980f11d1
+indexexchange.com, 191503, DIRECT, 50b1c356f2c5c8fc
