@@ -84,7 +84,7 @@ const generateArticleCard = function(article) {
   ).join('');
 
   return `
-    <a href="../posts/${article.filename}" class="article-card" data-tags="${article.tags.join(',')}">
+    <a href="/${article.filename}" class="article-card" data-tags="${article.tags.join(',')}">
         <div class="article-meta">
             <span>📅 ${this.formatDate(article.date)}</span>
             <span>📖 ${article.readTime} read</span>
