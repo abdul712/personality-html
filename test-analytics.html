@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Test - PersonalitySpark</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .success { background: #d4edda; border-left: 4px solid #28a745; }
+        .error { background: #f8d7da; border-left: 4px solid #dc3545; }
+        .info { background: #d1ecf1; border-left: 4px solid #17a2b8; }
+        .code {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            border: 1px solid #e9ecef;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #0056b3; }
+        #results { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>📊 PersonalitySpark Analytics Test</h1>
+    
+    <div class="info">
+        <h3>🎯 Current Configuration</h3>
+        <ul>
+            <li><strong>Grow.me Ad Network</strong> 💰: Site ID <code>U2l0ZTpjZDExNDczMS0zZWEyLTRkZWEtYjY4NS02NjBiOTBlODk2MmU=</code> (Monetization)</li>
+            <li><strong>Google Analytics 4</strong> 📊: Measurement ID <code>G-HF94KPRD1H</code> (Property: 426722856)</li>
+        </ul>
+    </div>
+
+    <h2>🔧 Test Analytics</h2>
+    <button onclick="testAnalyticsLoad()">Test Script Loading</button>
+    <button onclick="testGoogleAnalytics()">Test Google Analytics</button>
+    <button onclick="testGrowMe()">Test Grow.me Ads</button>
+    <button onclick="sendTestEvent()">Send Test Event</button>
+    <button onclick="clearResults()">Clear Results</button>
+
+    <div id="results"></div>
+
+    <!-- Load the analytics scripts -->
+    <script src="./js/utils/helpers.js"></script>
+    <script src="./js/utils/storage.js"></script>
+    <script src="./js/utils/script-loader.js"></script>
+    <script src="./js/config/analytics-config.js"></script>
+    <script src="./js/config/tracking-setup.js"></script>
+    <script src="./js/services/analytics.js"></script>
+
+    <script>
+        function log(message, type = 'info') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.innerHTML = `<strong>${new Date().toLocaleTimeString()}</strong> - ${message}`;
+            results.appendChild(div);
+            console.log(message);
+        }
+
+        function testAnalyticsLoad() {
+            log('🔍 Testing analytics system loading...', 'info');
+            
+            // Check if core components loaded
+            if (typeof window.PSAnalyticsConfig !== 'undefined') {
+                log('✅ Analytics Config loaded successfully', 'success');
+            } else {
+                log('❌ Analytics Config failed to load', 'error');
+            }
+
+            if (typeof window.PSScriptLoader !== 'undefined') {
+                log('✅ Script Loader loaded successfully', 'success');
+            } else {
+                log('❌ Script Loader failed to load', 'error');
+            }
+
+            if (typeof window.PersonalitySparkTracking !== 'undefined') {
+                log('✅ Tracking Setup loaded successfully', 'success');
+            } else {
+                log('❌ Tracking Setup failed to load', 'error');
+            }
+
+            // Get analytics summary
+            setTimeout(() => {
+                if (window.PSAnalyticsConfig) {
+                    const summary = window.PSAnalyticsConfig.getSummary();
+                    log(`📊 Analytics Summary: ${summary.enabledScripts} of ${summary.totalScripts} scripts enabled`, 'info');
+                    log(`🌍 Environment: ${summary.environment.isProduction ? 'Production' : 'Development'}`, 'info');
+                    log(`🍪 Cookies: ${summary.cookiesEnabled ? 'Enabled' : 'Disabled'}`, 'info');
+                    log(`✋ Consent: ${summary.hasConsent ? 'Given' : 'Not given'}`, 'info');
+                }
+            }, 1000);
+        }
+
+        function testGoogleAnalytics() {
+            log('🔍 Testing Google Analytics...', 'info');
+            
+            // Check if gtag is available
+            if (typeof gtag !== 'undefined') {
+                log('✅ Google Analytics gtag function available', 'success');
+                
+                // Send test event
+                gtag('event', 'test_event', {
+                    event_category: 'Test',
+                    event_label: 'Analytics Test Page',
+                    value: 1
+                });
+                log('📤 Test event sent to Google Analytics', 'success');
+            } else {
+                log('⏳ Google Analytics not yet loaded (may take a few seconds)', 'info');
+                
+                // Check again in 3 seconds
+                setTimeout(() => {
+                    if (typeof gtag !== 'undefined') {
+                        log('✅ Google Analytics loaded successfully (delayed)', 'success');
+                    } else {
+                        log('❌ Google Analytics failed to load', 'error');
+                        log('💡 Check: 1) Internet connection 2) Ad blockers 3) HTTPS requirement', 'info');
+                    }
+                }, 3000);
+            }
+
+            // Check dataLayer
+            if (typeof window.dataLayer !== 'undefined') {
+                log('✅ Google Analytics dataLayer initialized', 'success');
+            } else {
+                log('❌ Google Analytics dataLayer not found', 'error');
+            }
+        }
+
+        function testGrowMe() {
+            log('🔍 Testing Grow.me Ad Network...', 'info');
+            
+            // Check if growMe is available
+            if (typeof window.growMe !== 'undefined') {
+                log('✅ Grow.me ad script loaded successfully', 'success');
+                log('💰 Ad network is active and will display ads automatically', 'success');
+                
+                // Check for ad elements (may not be immediately visible)
+                setTimeout(() => {
+                    const adElements = document.querySelectorAll('[class*="grow"], [id*="grow"], [data-grow]');
+                    if (adElements.length > 0) {
+                        log(`🎯 Found ${adElements.length} potential ad container(s)`, 'success');
+                    } else {
+                        log('ℹ️ No ad containers detected yet (ads may load dynamically)', 'info');
+                    }
+                }, 2000);
+            } else {
+                log('⏳ Grow.me ad script not yet loaded (may take a few seconds)', 'info');
+                
+                // Check again in 3 seconds
+                setTimeout(() => {
+                    if (typeof window.growMe !== 'undefined') {
+                        log('✅ Grow.me ad network loaded successfully (delayed)', 'success');
+                    } else {
+                        log('❌ Grow.me ad script failed to load', 'error');
+                        log('💡 Check: 1) Internet connection 2) Ad blockers 3) Script loading', 'info');
+                    }
+                }, 3000);
+            }
+        }
+
+        function sendTestEvent() {
+            log('🔍 Sending test events to all analytics systems...', 'info');
+            
+            // Test internal analytics
+            if (window.PSAnalytics) {
+                window.PSAnalytics.trackEvent('test_event', {
+                    source: 'analytics_test_page',
+                    timestamp: Date.now()
+                });
+                log('📤 Test event sent to internal analytics', 'success');
+            }
+
+            // Test Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'analytics_test', {
+                    event_category: 'Test',
+                    event_label: 'Full System Test',
+                    value: 1
+                });
+                log('📤 Test event sent to Google Analytics', 'success');
+            }
+
+            // Test Grow.me
+            if (typeof window.growMe !== 'undefined') {
+                window.growMe('track', 'analytics_test', {
+                    category: 'Test',
+                    label: 'Full System Test'
+                });
+                log('📤 Test event sent to Grow.me', 'success');
+            }
+
+            log('🎉 All available analytics systems tested!', 'success');
+        }
+
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
+
+        // Auto-test on page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                log('🚀 Analytics test page loaded', 'info');
+                testAnalyticsLoad();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
