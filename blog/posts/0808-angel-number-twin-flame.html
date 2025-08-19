@@ -464,6 +464,64 @@
             border-color: var(--primary-600);
         }
     </style>
+    
+    <!-- Grow.me Ad Script -->
+    <script data-grow-initializer="">!(function(){window.growMe||((window.growMe=function(e){window.growMe._.push(e);}),(window.growMe._=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTpjZDExNDdjMS0zZWEyLTRkZWEtYjY4NS02NjBiOTBlODk2MmU=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t);})();</script>
+    
+    <!-- Ad Container Styles -->
+    <style>
+        .ad-container {
+            text-align: center;
+            margin: var(--spacing-8) 0;
+            padding: var(--spacing-4);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .ad-label {
+            font-size: var(--font-size-xs);
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .ad-banner {
+            margin: var(--spacing-6) auto;
+            max-width: 728px;
+        }
+        
+        .ad-square {
+            margin: var(--spacing-6) auto;
+            max-width: 300px;
+        }
+        
+        .ad-mobile {
+            margin: var(--spacing-4) auto;
+            max-width: 320px;
+        }
+        
+        @media (max-width: 768px) {
+            .ad-banner {
+                display: none;
+            }
+            .ad-square {
+                display: none;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .ad-mobile {
+                display: none;
+            }
+        }
+        
+        [data-theme="dark"] .ad-container {
+            background: var(--bg-accent);
+            border-color: var(--gray-600);
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -522,6 +580,12 @@
 
         <p>Its appearance often signals that one is on the correct path to finding profound spiritual bonds and mutual enlightenment with their twin flame. It acts as a reminder to maintain a positive outlook and balance in life. By following the guidance of this number, one can further explore the depths of their spiritual journey.</p>
 
+        <!-- Ad Container 1 - Top of Content -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <div id="grow-ad-1" class="grow-ad-banner"></div>
+        </div>
+
         <h2>Understanding 0808 Angel Number</h2>
 
         <p>The 0808 angel number is a powerful symbol in the <strong>twin flame journey</strong>, representing <strong>abundance</strong>, <strong>financial stability</strong>, and potential growth in both <strong>material and spiritual domains</strong>. This number encourages those experiencing it to focus on their aspirations, fostering a <strong>mindset geared towards positivity</strong> and the expectation of success.</p>
@@ -577,6 +641,12 @@
                 <div class="reunion-number">4444</div>
                 <div class="reunion-meaning">Offers reassurance of protection and stability, essential components for nurturing the twin flame connection</div>
             </div>
+        </div>
+
+        <!-- Ad Container 2 - Middle of Content -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <div id="grow-ad-2" class="grow-ad-square"></div>
         </div>
 
         <h2>Interpreting Synchronicities and Patterns</h2>
@@ -639,6 +709,12 @@
 
         <div class="highlight-box">
             <p><strong>Divine Prosperity Path:</strong> The 0808 angel number reminds you that true abundance encompasses both material prosperity and spiritual fulfillment. Trust in the divine timing of your twin flame journey and remain open to the blessings that await.</p>
+        </div>
+
+        <!-- Ad Container 3 - Bottom of Content -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <div id="grow-ad-3" class="grow-ad-banner"></div>
         </div>
 
         <!-- Social Share Section -->
@@ -747,6 +823,39 @@
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = themeToggle.querySelector('.theme-icon');
         themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        // Initialize Grow.me ads after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for Grow.me to be available
+            function initializeAds() {
+                if (typeof window.growMe === 'function') {
+                    // Initialize ads in the containers
+                    window.growMe('growads.load', {
+                        container: '#grow-ad-1',
+                        size: 'leaderboard',
+                        position: 'top'
+                    });
+                    
+                    window.growMe('growads.load', {
+                        container: '#grow-ad-2', 
+                        size: 'square',
+                        position: 'middle'
+                    });
+                    
+                    window.growMe('growads.load', {
+                        container: '#grow-ad-3',
+                        size: 'leaderboard', 
+                        position: 'bottom'
+                    });
+                } else {
+                    // Retry after 100ms if Grow.me not loaded yet
+                    setTimeout(initializeAds, 100);
+                }
+            }
+            
+            // Start initializing ads
+            setTimeout(initializeAds, 500);
+        });
     </script>
 </body>
 </html>
