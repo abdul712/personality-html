@@ -1,0 +1,39 @@
+# Dockerfile optimized for Coolify with Cloudflare Flexible SSL
+FROM nginx:alpine
+
+# Install necessary packages
+RUN apk add --no-cache \
+    curl \
+    ca-certificates \
+    tzdata
+
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Copy website files
+COPY . /app/
+
+# Remove unnecessary files
+RUN rm -rf /app/node_modules \
+    /app/.git \
+    /app/scripts \
+    /app/cloudways-migration \
+    /app/wordpress-migration \
+    /app/*.md \
+    /app/Dockerfile* \
+    /app/coolify.yaml \
+    /app/wrangler.toml
+
+# Set correct permissions
+RUN chmod -R 755 /app && \
+    chown -R nginx:nginx /app
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost/health || exit 1
+
+# Expose port 80 (HTTP only for Cloudflare Flexible SSL)
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx"]

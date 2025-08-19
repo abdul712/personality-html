@@ -1,0 +1,11 @@
+name = "personality-spark"
+compatibility_date = "2025-01-19"
+pages_build_output_dir = "./"
+
+# Build configuration
+[build]
+command = ""
+
+# Environment variables (if needed)
+[env.production]
+vars = { ENVIRONMENT = "production" }

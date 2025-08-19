@@ -581,9 +581,9 @@
         <p>Its appearance often signals that one is on the correct path to finding profound spiritual bonds and mutual enlightenment with their twin flame. It acts as a reminder to maintain a positive outlook and balance in life. By following the guidance of this number, one can further explore the depths of their spiritual journey.</p>
 
         <!-- Ad Container 1 - Top of Content -->
-        <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
-            <div id="grow-ad-1" class="grow-ad-banner"></div>
+        <div class="ad-container" style="text-align: center; margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <div style="font-size: 12px; color: #666; margin-bottom: 10px; text-transform: uppercase;">Advertisement</div>
+            <div id="journey-ad-slot-1"></div>
         </div>
 
         <h2>Understanding 0808 Angel Number</h2>
@@ -644,9 +644,9 @@
         </div>
 
         <!-- Ad Container 2 - Middle of Content -->
-        <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
-            <div id="grow-ad-2" class="grow-ad-square"></div>
+        <div class="ad-container" style="text-align: center; margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <div style="font-size: 12px; color: #666; margin-bottom: 10px; text-transform: uppercase;">Advertisement</div>
+            <div id="journey-ad-slot-2"></div>
         </div>
 
         <h2>Interpreting Synchronicities and Patterns</h2>
@@ -712,9 +712,9 @@
         </div>
 
         <!-- Ad Container 3 - Bottom of Content -->
-        <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
-            <div id="grow-ad-3" class="grow-ad-banner"></div>
+        <div class="ad-container" style="text-align: center; margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+            <div style="font-size: 12px; color: #666; margin-bottom: 10px; text-transform: uppercase;">Advertisement</div>
+            <div id="journey-ad-slot-3"></div>
         </div>
 
         <!-- Social Share Section -->
@@ -824,37 +824,40 @@
         const themeIcon = themeToggle.querySelector('.theme-icon');
         themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 
-        // Initialize Grow.me ads after page load
+        // Initialize Journey ads - similar to GoodwillOutlets.com
         document.addEventListener('DOMContentLoaded', function() {
-            // Wait for Grow.me to be available
-            function initializeAds() {
+            // Initialize Journey ads after Grow.me loads
+            function initializeJourneyAds() {
                 if (typeof window.growMe === 'function') {
-                    // Initialize ads in the containers
-                    window.growMe('growads.load', {
-                        container: '#grow-ad-1',
-                        size: 'leaderboard',
-                        position: 'top'
-                    });
-                    
-                    window.growMe('growads.load', {
-                        container: '#grow-ad-2', 
-                        size: 'square',
-                        position: 'middle'
-                    });
-                    
-                    window.growMe('growads.load', {
-                        container: '#grow-ad-3',
-                        size: 'leaderboard', 
-                        position: 'bottom'
-                    });
+                    try {
+                        // Create ad slots using Journey MV pattern
+                        window.growMe('ads.serve', {
+                            slot: 'journey-ad-slot-1',
+                            position: 'top-content'
+                        });
+                        
+                        window.growMe('ads.serve', {
+                            slot: 'journey-ad-slot-2', 
+                            position: 'mid-content'
+                        });
+                        
+                        window.growMe('ads.serve', {
+                            slot: 'journey-ad-slot-3',
+                            position: 'bottom-content'
+                        });
+                        
+                        console.log('Journey ads initialized successfully');
+                    } catch (error) {
+                        console.log('Journey ads initialization error:', error);
+                    }
                 } else {
-                    // Retry after 100ms if Grow.me not loaded yet
-                    setTimeout(initializeAds, 100);
+                    // Retry if Grow.me not loaded yet
+                    setTimeout(initializeJourneyAds, 200);
                 }
             }
             
-            // Start initializing ads
-            setTimeout(initializeAds, 500);
+            // Start initialization after short delay
+            setTimeout(initializeJourneyAds, 1000);
         });
     </script>
 </body>
