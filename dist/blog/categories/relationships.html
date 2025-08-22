@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relationships & Love Articles - PersonalitySpark Blog</title>
+    <meta name="description" content="Comprehensive articles on relationships, dating advice, love compatibility, and communication. Expert insights on building meaningful connections and lasting love.">
+    <meta name="keywords" content="relationships articles, dating advice, love compatibility, relationship communication, dating tips, love advice, relationship guidance">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Relationships & Love Articles - PersonalitySpark Blog">
+    <meta property="og:description" content="Comprehensive articles on relationships, dating advice, love compatibility, and communication. Expert insights on building meaningful connections and lasting love.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://personalityspark.com/blog/categories/relationships.html">
+    <meta property="og:image" content="https://personalityspark.com/assets/icons/icon-512.png">
+    
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="icon" type="image/svg+xml" href="../../assets/icons/favicon.svg">
+    <link rel="canonical" href="https://personalityspark.com/blog/categories/relationships.html">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../" class="nav-logo">
+                <span class="logo-icon">✨</span>
+                PersonalitySpark
+            </a>
+            <div class="nav-links">
+                <a href="../../#home" class="nav-link">Home</a>
+                <a href="../../#quizzes" class="nav-link">Quizzes</a>
+                <a href="/blog" class="nav-link active">Blog</a>
+                <a href="../..//about-us.html" class="nav-link">About</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Category-Specific Hero Section -->
+    <section class="category-specific-header">
+        <div class="container">
+            <div class="category-breadcrumb">
+                <a href="../">Blog</a> / Relationships & Love
+            </div>
+            <div class="category-icon">💕</div>
+            <h1>Relationships & Love</h1>
+            <p>Navigate the complexities of relationships, dating, and finding meaningful connections. Expert guidance on love, communication, and building lasting bonds.</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="container search-section">
+        <h2 style="margin-bottom: var(--spacing-4); color: var(--text-primary);">Relationship Articles Search</h2>
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Search relationship articles..." id="blogSearch">
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="container featured-posts">
+        <h2>Relationship Articles</h2>
+        <div class="posts-grid" id="postsGrid">
+            <!-- Articles will be loaded dynamically -->
+        </div>
+    </section>
+
+    <script src="../../blog/js/article-registry.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const articleRegistry = new ArticleRegistry();
+            const postsGrid = document.getElementById('postsGrid');
+
+            const articles = articleRegistry.getArticlesByCategory('relationships');
+            console.log('Found articles for relationships:', articles.length);
+
+            if (articles.length === 0) {
+                postsGrid.innerHTML = '<p style="text-align: center; color: var(--text-secondary); font-size: var(--font-size-lg); margin: var(--spacing-8) 0;">No articles found in this category yet. Check back soon for new content!</p>';
+            } else {
+                articles.forEach(article => {
+                    const articleCard = articleRegistry.generateArticleCard(article);
+                    postsGrid.innerHTML += articleCard;
+                });
+            }
+        });
+    </script>
+
+    <!-- Newsletter Signup -->
+    <section class="container" style="text-align: center; padding: var(--spacing-12) 0;">
+        <div style="background: var(--bg-secondary); padding: var(--spacing-8); border-radius: var(--radius-lg); max-width: 600px; margin: 0 auto;">
+            <h3 style="color: var(--text-primary); margin-bottom: var(--spacing-4);">Stay Updated</h3>
+            <p style="color: var(--text-secondary); margin-bottom: var(--spacing-6);">Get the latest insights on personality, spirituality, and self-discovery delivered to your inbox.</p>
+            <div style="display: flex; gap: var(--spacing-3); flex-wrap: wrap; justify-content: center;">
+                <input type="email" placeholder="Enter your email" style="flex: 1; min-width: 250px; padding: var(--spacing-3); border: 1px solid var(--gray-300); border-radius: var(--radius-md); background: var(--bg-primary); color: var(--text-primary);">
+                <button class="btn btn-primary">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PersonalitySpark Blog</h4>
+                    <p>Your trusted source for personality insights, spiritual growth, and self-discovery.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="twin-flames.html">Twin Flames</a></li>
+                        <li><a href="introversion.html">Introversion</a></li>
+                        <li><a href="angel-numbers.html">Angel Numbers</a></li>
+                        <li><a href="relationships.html">Relationships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../#home">Home</a></li>
+                        <li><a href="../../#quizzes">Personality Tests</a></li>
+                        <li><a href="../..//about-us.html">About</a></li>
+                        <li><a href="../../#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PersonalitySpark. All rights reserved. | <a href="../../privacy.html">Privacy Policy</a> | <a href="../../terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Blog search functionality
+        document.getElementById('blogSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const articleCards = document.querySelectorAll('.article-card');
+            
+            articleCards.forEach(card => {
+                const title = card.querySelector('.article-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.article-excerpt').textContent.toLowerCase();
+                const tags = card.getAttribute('data-tags').toLowerCase();
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm) || tags.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('personality-spark-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        // Update theme toggle icon
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            const themeIcon = themeToggle.querySelector('.theme-icon');
+            if (themeIcon) {
+                themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+
+        // Theme toggle functionality
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('personality-spark-theme', newTheme);
+                
+                const themeIcon = this.querySelector('.theme-icon');
+                if (themeIcon) {
+                    themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

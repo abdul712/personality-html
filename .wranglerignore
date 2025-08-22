@@ -1,0 +1,63 @@
+# Wrangler ignore file - Only include essential web assets
+.git/
+node_modules/
+.DS_Store
+*.log
+.env
+.env.local
+.env.production
+.env.development
+
+# Build artifacts
+dist/
+build/
+.cache/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+
+# Playwright artifacts
+.playwright-mcp/
+
+# All markdown and config files (documentation)
+*.md
+package-lock.json
+package.json
+coolify.yaml
+docker-compose.yml
+Dockerfile*
+nginx.conf
+nixpacks.toml
+deploy-*.sh
+fix-*.md
+
+# Screenshots and images
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# Migration and development files
+cloudways-migration/
+wordpress-migration/
+scripts/
+docs/
+webhook_config.json
+
+# Test files
+test-*.md
+progress.md
+
+# Only include essential web files:
+# - HTML files
+# - CSS files  
+# - JS files
+# - SVG icons
+# - Manifest files
+# - robots.txt/sitemap.xml

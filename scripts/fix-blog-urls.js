@@ -116,7 +116,7 @@ updateArticleRegistry();
 console.log('\n=== Summary ===');
 console.log(`✅ Fixed ${fixedCount} files`);
 console.log('✅ All blog URLs now use root format: /article-name.html');
-console.log('\nOld format: /blog/posts/article.html');
+console.log('\nOld format: article.html');
 console.log('New format: /article.html');
 console.log('\n🎉 URL structure permanently fixed!');
 console.log('\nRemember to:');

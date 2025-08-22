@@ -1,0 +1,134 @@
+{
+  "name": "PersonalitySpark - Discover Your True Personality",
+  "short_name": "PersonalitySpark",
+  "description": "Take engaging, AI-powered personality quizzes and uncover fascinating insights about yourself. No registration required!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["lifestyle", "education", "entertainment"],
+  "screenshots": [
+    {
+      "src": "/assets/images/screenshot-mobile-1.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Home screen on mobile"
+    },
+    {
+      "src": "/assets/images/screenshot-mobile-2.png", 
+      "sizes": "390x844",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Quiz interface on mobile"
+    },
+    {
+      "src": "/assets/images/screenshot-desktop-1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Home screen on desktop"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/assets/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Take Quick Quiz",
+      "short_name": "Quick Quiz",
+      "description": "Start a quick 5-minute personality assessment",
+      "url": "/#quizzes",
+      "icons": [
+        {
+          "src": "/assets/icons/shortcut-quiz.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Daily Challenge",
+      "short_name": "Daily",
+      "description": "Take today's personality challenge",
+      "url": "/#daily",
+      "icons": [
+        {
+          "src": "/assets/icons/shortcut-daily.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "View Results",
+      "short_name": "Results",
+      "description": "View your previous quiz results",
+      "url": "/#results",
+      "icons": [
+        {
+          "src": "/assets/icons/shortcut-results.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "handle_links": "preferred",
+  "capture_links": "existing-client-navigate"
+}
